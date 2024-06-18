@@ -1,0 +1,49 @@
+---
+import Slider from "../components/slider.astro";
+import CarruselVenta from "../components/component-venta/carrousel-venta.astro";
+import NavFija from "../components/navFija.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import ToggleBtn from "../components/component-venta/toggle.astro";
+import Marcas from "../components/component-venta/marcas.astro";
+import Clientes from "../components/component-venta/clientes.astro";
+import ProcesoCompra from "../components/component-venta/proceso.astro";
+---
+
+<Layout title="ECONOMIC SALES DE MEXICO SA DE CV">
+	<NavFija />
+	<header>
+		<h1>VENTA DE EQUIPO DE COMPUTO</h1>
+	</header>
+	<CarruselVenta />
+    <ToggleBtn /> 
+	<Marcas />
+	<Clientes />
+	<ProcesoCompra />
+	<Footer />
+</Layout>
+<style>
+	header h1 {
+		font-size: 4em;
+		color: aliceblue;
+		margin-top: 7%;
+		background: rgb(66, 66, 249);
+		background: linear-gradient(
+			90deg,
+			rgb(66, 66, 249) 0%,
+			rgb(5, 242, 255) 100%
+		);
+		margin: .5em;
+		padding: 1em;
+		border-radius: 10px;
+		font-weight: bold;
+		font-family: montserrat;
+	}
+	@media(max-width:400px){
+        header h1{
+            font-size: 2em;
+            margin-top: 2em;
+        }
+    }
+
+</style>

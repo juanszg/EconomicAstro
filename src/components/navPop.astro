@@ -1,0 +1,431 @@
+---
+import NavFija from "./navFija.astro";
+---
+
+<!--------------------------- BARRA NAVEGACION MENU inicio ----------------------------------------->
+<head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<input type="checkbox" id="active">
+<label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+<div class="wrapper">
+    <ul>
+        <li><a href="index.html">
+                INICIO</a></li>
+        <li><a href="NOSOTROS/indexnosotros.html">NOSOTROS</a>
+        </li>
+        <li><a href="VENTA DE EQUIPO/ventaeq.html">
+                VENTA DE EQUIPO</a></li>
+        <li><a href="PATROCINIOS/indexpatrocinios.html">PATROCINIOS</a>
+        </li>
+        <li><a href="CONTACTO/contacto.html">
+                CONTACTO</a></li>
+    </ul>
+</div>
+<style>
+    /*----------------------------------- MENU DESPLEGABLE ------------------------------*/
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+header {
+  font-size: 75px;
+  text-align: center;
+  color: #2486df;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  width: 525px;
+  height: 350px;
+  margin: 1em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: montserrat;
+}
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(-135deg, #6ce9ff, #2a2af9);
+  /*background: linear-gradient(-135deg, #6ce9ff, #2a2af9);
+  /* background: linear-gradient(-135deg, #c850c0, #4158d0);*/
+  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+  /* clip-path: circle(25px at calc(0% + 45px) 45px); */
+  clip-path: circle(25px at calc(100% - 45px) 45px);
+  transition: all 0.3s ease-in-out;
+}
+
+/*------------------ ACCIONES AL ACTIVAR EL BOTON DE MENU DE NAVEGACIÓN --------------*/
+#active:checked~.wrapper {
+  clip-path: circle(75%);
+}
+
+#active:checked~.gif img {
+  /* LA CURVITA ES COMO UN IF, CONDICIONAL DE ACCION*/
+  visibility: hidden;
+}
+
+#active:checked~.grid2 {
+  /* LA CURVITA ES COMO UN IF, CONDICIONAL DE ACCION*/
+  visibility: hidden !important;
+}
+
+#active:checked~.boxbox {
+  visibility: hidden !important;
+}
+
+#active:checked~.logoeconomic {
+  /* LA CURVITA ES COMO UN IF, CONDICIONAL DE ACCION*/
+  visibility: hidden !important;
+}
+#active:checked~.logo-economic {
+  /* LA CURVITA ES COMO UN IF, CONDICIONAL DE ACCION*/
+  visibility: hidden !important;
+}
+
+.menu-btn {
+  /*BOTON */
+  position: fixed;
+  /*QUE SE SIGA AVANZANDO CON LA PANTALLA*/
+  z-index: 2;
+  right: 20px;
+  /* left: 20px; */
+  top: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(-135deg, #190eaf, #2a98f9);
+  /*background: linear-gradient(-135deg, #6ce9ff, #2a2af9);*/
+  /* background: linear-gradient(-135deg, #c850c0, #4158d0);*/
+  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+  transition: all 0.3s ease-in-out;
+}
+
+#active:checked~.menu-btn {
+  /* background: #fff;
+  color: #4158d0;*/
+  background: #55f;
+  color: #13c737;
+  z-index: 999;
+}
+
+#active:checked~.menu-btn i:before {
+  content: "\f00d";
+}
+
+.wrapper ul {
+  /*display: flex;*/
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: left;
+  overflow: hidden;
+}
+
+.wrapper ul li {
+  margin: 15px 0;
+}
+
+.wrapper ul li a {
+  color: none;
+  text-decoration: none;
+  font-size: 60px;
+  /*font-weight: 500;*/
+  font-weight: bold;
+  padding: 5px 30px;
+  color: #fff;
+  position: relative;
+  line-height: 90px;
+  /*ANCHO DE TEXTO MENU*/
+  transition: all 0.3s ease;
+  font-family: montserrat;
+  overflow-y: hidden;
+}
+
+.wrapper ul li a:after {
+  position: absolute;
+  content: "";
+  background: #fff;
+  width: 100%;
+  height: 85px;
+  /*GROSOR DEL COLOR BLANCO*/
+  left: 0;
+  border-radius: 50px;
+  transform: scaleY(0);
+  z-index: -1;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.wrapper ul li a:hover:after {
+  transform: scaleY(1);
+}
+
+.wrapper ul li a:hover {
+  color: #4158d0;
+  font-family: montserrat;
+  font-weight: bold;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -10%);
+  z-index: -1;
+  text-align: center;
+  width: 100%;
+  color: #202020;
+}
+
+.content .title {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.content p {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+/* ---------------------------------------- */
+@media (max-width: 1220px) {
+  @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: montserrat;
+  }
+
+  .wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(-135deg, #6ce9ff, #2a2af9);
+    /*background: linear-gradient(-135deg, #6ce9ff, #2a2af9);
+    /* background: linear-gradient(-135deg, #c850c0, #4158d0);*/
+    /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+    /* clip-path: circle(25px at calc(0% + 45px) 45px); */
+    clip-path: circle(25px at calc(100% - 45px) 45px);
+    transition: all 0.3s ease-in-out;
+  }
+
+  /*------------------ ACCIONES AL ACTIVAR EL BOTON DE MENU DE NAVEGACIÓN --------------*/
+  #active:checked~.wrapper {
+    clip-path: circle(75%);
+  }
+
+  #active:checked~.gif img {
+    /* LA CURVITA ES COMO UN IF, CONDICIONAL DE ACCION*/
+    visibility: hidden !important;
+  }
+
+  #active:checked~.boxbox {
+    visibility: hidden !important;
+  }
+
+  .menu-btn {
+    /*BOTON */
+    position: fixed;
+    /*QUE SE SIGA AVANZANDO CON LA PANTALLA*/
+    z-index: 2;
+    right: 20px;
+    /* left: 20px; */
+    top: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(-135deg, #190eaf, #2a98f9);
+    /*background: linear-gradient(-135deg, #6ce9ff, #2a2af9);*/
+    /* background: linear-gradient(-135deg, #c850c0, #4158d0);*/
+    /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+    transition: all 0.3s ease-in-out;
+  }
+
+  #active:checked~.menu-btn {
+    /* background: #fff;
+    color: #4158d0;*/
+    background: #55f;
+    color: #13c737;
+  }
+
+  #active:checked~.menu-btn i:before {
+    content: "\f00d";
+  }
+
+  .wrapper ul {
+    /*display: flex;*/
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-20%, -50%);
+    list-style: none;
+    text-align: left;
+    overflow: hidden;
+  }
+
+  .wrapper ul li {
+    margin: 15px 0;
+  }
+
+  .wrapper ul li a {
+    color: none;
+    text-decoration: none;
+    font-size: 60px;
+    /*font-weight: 500;*/
+    font-weight: bold;
+    padding: 5px 30px;
+    color: #fff;
+    position: relative;
+    line-height: 90px;
+    /*ANCHO DE TEXTO MENU*/
+    transition: all 0.3s ease;
+    font-family: montserrat;
+    overflow-y: hidden;
+  }
+
+  .wrapper ul li a:after {
+    position: absolute;
+    content: "";
+    background: #fff;
+    width: 100%;
+    height: 85px;
+    /*GROSOR DEL COLOR BLANCO*/
+    left: 0;
+    border-radius: 50px;
+    transform: scaleY(0);
+    z-index: -1;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+  }
+
+  .wrapper ul li a:hover:after {
+    transform: scaleY(1);
+  }
+
+  .wrapper ul li a:hover {
+    /* Cambio en el texto color   */
+    color: #4154d0;
+    font-family: montserrat;
+    font-weight: bold;
+  }
+
+  input[type=checkbox] {
+    display: none;
+  }
+
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -10%);
+    z-index: -1;
+    text-align: center;
+    width: 100%;
+    color: #202020;
+  }
+
+  .content .title {
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  .content p {
+    font-size: 35px;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 910px) {
+  .wrapper ul {
+    /*display: flex;*/
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-10%, -50%);
+    list-style: none;
+    text-align: left;
+    overflow: hidden;
+  }
+
+  .wrapper ul li a {
+    color: none;
+    text-decoration: none;
+    font-size: 18px;
+    /*font-weight: 500;*/
+    font-weight: bold;
+    padding: 5px 30px;
+    color: #fff;
+    position: relative;
+    line-height: 90px;
+    /*ANCHO DE TEXTO MENU*/
+    transition: all 0.3s ease;
+    font-family: montserrat;
+    overflow-y: hidden;
+  }
+}
+
+@media (max-width: 730px) {
+  .wrapper ul {
+    /*display: flex;*/
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-20%, -50%);
+    list-style: none;
+    text-align: left;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 715) {
+  .wrapper ul {
+    /*display: flex;*/
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(0%, -50%);
+    list-style: none;
+    text-align: left;
+    overflow: hidden;
+  }
+
+  .ventaeq {
+    visibility: hidden;
+  }
+
+  .ventaeq::before {
+    content: COMPUTO;
+  }
+}
+
+</style>

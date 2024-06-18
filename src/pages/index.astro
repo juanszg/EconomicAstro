@@ -1,0 +1,144 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import NavFija from "../components/navFija.astro";
+import Titulo from "../components/hola.astro";
+import NavPop from "../components/navPop.astro";
+import Slider from "../components/slider.astro";
+import Footer from "../components/Footer.astro";
+import Carrusel from "../components/Carrusel.astro";
+---
+
+<!-- hola -->
+
+<Layout title="ECONOMIC SALES DE MEXICO SA DE CV">
+	<main>
+		<!-- <NavPop />-->
+	</main>
+	<body>
+		<NavFija /><br /><br />
+		<Titulo />
+		<Carrusel />
+		<div class="contenedor1">
+			<div class="textoec">
+				<h3> 
+					Llevamos la vanguardia tecnológica <br />a personas
+					extraordinarias
+				</h3>
+			</div>
+			<div class="videoyt">
+				<iframe
+					width="680"
+					height="350"
+					src="https://www.youtube.com/embed/t-6oJIv1nKE?si=eZqJp615UAnHF_Rj"
+					title="YouTube video player"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowfullscreen></iframe>
+			</div>
+			<Slider />
+			<Card />
+		</div>
+	</body>
+	<Footer />
+</Layout>
+
+<style>
+	main {
+		padding: 0px;
+		margin: 0px;
+		/*margin: auto;*/
+		padding: 1rem;
+		/*width: 800px;*/
+		width: 100%;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	body {
+		padding: 0px;
+		margin: 0px;
+		font-family: "Montserrat", sans-serif;
+	}
+	.contenedor1 {
+		margin: 10%;
+		align-items: center;
+	}
+
+	.textoec {
+		animation: fade 1.5s ease-in-out;
+		font-size: 2.2em;
+		/*text-shadow: 2px 2px 0px black;*/
+		margin: 25px;
+	}
+
+	.videoyt {
+		text-align: center;
+		margin-bottom: 5em;
+	}
+
+	.videoyt iframe {
+		border-radius: 1.5em;
+		margin-top: 1em;
+	}
+
+	.textoec h3 {
+		color: #60b5ff;
+		text-align: center;
+		font-size: 1.6em;
+		font-family: montserrat;
+		font-weight: 900;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	
+	/*.astro-a {
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: auto;
+		z-index: -1;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(
+			rgba(var(--accent-dark), 66%),
+			rgba(var(--accent-dark), 33%)
+		);
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.instructions code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent-light));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}*/
+</style>
