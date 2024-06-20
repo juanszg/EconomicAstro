@@ -1,6 +1,5 @@
 ---
 
-
 ---
 
 <!doctype html>
@@ -41,23 +40,23 @@
             </div>
 
             <div class="dropdown-menu">
-                <li><a href="/Nosotros">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="/Blog">Blog</a></li>
-                <li><a href="/Nosotros">Nosotros</a></li>
-                <li><a href="/Ventadeequipo">Venta de equipo</a></li>
-                <li><a href="/Patrocinios">Patrocinios</a></li>
-                <li><a href="/Contacto">Contacto</a></li>
+                <li><a href="/nosotros">Nosotros</a></li>
+                <li><a href="/venta">Venta de equipo</a></li>
+                <li><a href="/patrocinios">Patrocinios</a></li>
+                <li><a href="/contacto">Contacto</a></li>
             </div>
         </header>
     </body>
 
     <style>
-  
         body {
             padding: 0px;
             margin: 0px;
-            font-family: raleway;
+            font-family: montserrat;
         }
+
         .logo-2 {
             text-align: center;
             width: 100%;
@@ -95,6 +94,7 @@
         a:hover {
             color: rgb(171, 5, 5);
         }
+        /*-------------  NUEVO CODIGO ------------------------------- */
         .navbar {
             position: absolute;
             top: 100px;
@@ -105,15 +105,16 @@
         }
         .navbar .toggle-btn {
             /*color: rgb(135, 3, 3); /* color barra colores*/
-            color: rgb(0, 0, 0);
+            /*color: rgb(0, 0, 0);*/
+            color: rgb(231, 231, 231);
             font-size: 1.7em;
             padding: 0em;
             display: visible;
         }
         .dropdown-menu {
-            display: none;
+            display: none !important;
             /*background: rgba(74, 188, 190, 0.1);*/
-            background-color: whitesmoke;
+            background-color: rgb(249, 249, 249);
             position: absolute;
             right: 4rem;
             top: 170px;
@@ -121,7 +122,7 @@
             width: 300px;
             line-height: 2em;
             border-radius: 10px;
-            
+
             z-index: 999;
             /*padding: 3.5em;*/
 
@@ -136,12 +137,14 @@
         .dropdown-menu a {
             color: darkblue;
         }
-        .dropdown-menu a:hover{
+        .dropdown-menu a:hover {
             color: rgb(127, 223, 255);
         }
 
         .dropdown-menu.open {
+            display: block !important;
             height: 380px;
+            z-index: 999;
         }
         .navbar .enlaces {
             display: none; /* Si quiero el texto de navegacion horizontal en la navbar */
@@ -149,12 +152,6 @@
         .navbar .toggle-btn {
             display: block;
             cursor: pointer;
-        }
-        .dropdown-menu {
-            display: block;
-        }
-        body.dark .navbar {
-            background: rgb(0, 0, 0);
         }
         @media (max-width: 730px) {
             .logo-2 img {
@@ -205,16 +202,13 @@
                 height: 205px;
                 transform: scale(1);
             }
-            body.dark .navbar {
-                background: rgb(0, 0, 0);
-            }
         }
         @media (max-width: 645px) {
             .logo-2 img {
                 position: relative;
                 left: -5%;
             }
-            .dropdown-menu{
+            .dropdown-menu {
                 top: 150px;
             }
         }
@@ -238,7 +232,6 @@
                 position: absolute;
                 right: 1.5rem;
                 top: 150px;
-
             }
         }
         @media (max-width: 360px) {
