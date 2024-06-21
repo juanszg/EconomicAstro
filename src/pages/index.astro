@@ -13,23 +13,22 @@ import Dropdown from "../components/Dropdown.astro";
 <!-- hola -->
 
 <Layout title="ECONOMIC SALES DE MEXICO SA DE CV">
-	<main>  
-		<!-- <NavPop />-->
+	<!-- <main>  
+		<!-- <NavPop />
 	</main>
+     -->
 	<body>
+		<!-- MENU  -->
 		<div class="barra">
-			<!--<h2>ECONOMIC SALES DE MEXICO</h2>-->
 			<img src="/src/pages/img/Logo-pro.png">
 		</div>
 		<div class="nav-fija">
             <NavFija />
         </div>
 		<div class="nav-pop">
-            <!-- <NavPop /> -->
             <Dropdown />
         </div>
-		
-		
+		<!-- MENU  -->
 		
 		<br /><br />
 		<!--<Titulo /> -->
@@ -43,8 +42,8 @@ import Dropdown from "../components/Dropdown.astro";
 			</div>
 			<div class="videoyt">
 				<iframe
-					width="680"
-					height="350"
+					width="85%"
+					height="400px"
 					src="https://www.youtube.com/embed/t-6oJIv1nKE?si=eZqJp615UAnHF_Rj"
 					title="YouTube video player"
 					frameborder="0"
@@ -98,7 +97,17 @@ import Dropdown from "../components/Dropdown.astro";
 		/*text-shadow: 2px 2px 0px black;*/
 		margin: 25px;
 	}
-
+	@media (max-width:645px){
+	 .textoec{
+		font-size: 1.2em;
+	 }
+	}
+	@media (max-width:445px){
+	 .textoec{
+		font-size: .8em;
+		margin: 0px
+	 }
+	}
 	.videoyt {
 		text-align: center;
 		margin-bottom: 5em;
@@ -123,6 +132,7 @@ import Dropdown from "../components/Dropdown.astro";
 		text-align: center;
 		margin-bottom: 1em;
 	}
+	/* BARRA NAV */
 	@media (max-width: 750px) {
         .nav-fija {
             display: none;

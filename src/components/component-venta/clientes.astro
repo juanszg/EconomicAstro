@@ -3,65 +3,81 @@
     <h2 class="clientes-1 fw-bold">NUESTROS MEJORES CLIENTES</h2>
 </div>
 <div class="grid-layout">
-    <div class="cliente IPN">
+    <div class="cliente">
         <!-- politecnico-->
-        <img src="/src/components/component-venta/img-clientes/IPN.png" />
+        <img src="/src/components/component-venta/img-clientes/IPN.png" alt="IPN" />
     </div>
-    <div class="cliente fundacion">
+    <div class="cliente">
         <!-- fundacion politecnico-->
-        <img src="/src/components/component-venta/img-clientes/Fundacion-Politecnico.png" />
+        <img src="/src/components/component-venta/img-clientes/Fundacion-Politecnico.png" alt="Fundación Politécnico" />
     </div>
-    <div class="cliente lukoil">
+    <div class="cliente">
         <!-- lukoil -->
-        <img src="/src/components/component-venta/img-clientes/LUKOIL.png" />
+        <img src="/src/components/component-venta/img-clientes/LUKOIL.png" alt="LUKOIL" />
     </div>
-    <div class="cliente eon">
+    <div class="cliente">
         <!-- eon reality -->
-        <img src="/src/components/component-venta/img-clientes/EON-reality.png" />
+        <img src="/src/components/component-venta/img-clientes/EON-reality.png" alt="EON Reality" />
     </div>
-    <div class="cliente intercon">
+    <div class="cliente">
         <!-- inter-con -->
-        <img src="/src/components/component-venta/img-clientes/INTER-CON.png" />
+        <img src="/src/components/component-venta/img-clientes/INTER-CON.png" alt="INTER-CON" />
     </div>
-    <div class="cliente gtm">
+    <div class="cliente">
         <!-- grupo torre medica -->
-        <img src="/src/components/component-venta/img-clientes/Grupo-torre-medica.png" />
+        <img src="/src/components/component-venta/img-clientes/Grupo-torre-medica.png" alt="Grupo Torre Médica" />
     </div>
-    <div class="cliente evm">
+    <div class="cliente">
         <!-- evm energia -->
-        <img src="/src/components/component-venta/img-clientes/EVM.png" />
+        <img src="/src/components/component-venta/img-clientes/EVM.png" alt="EVM Energía" />
     </div>
-    <div class="cliente matilda">
+    <div class="cliente">
         <!-- mattilda -->
-        <img src="/src/components/component-venta/img-clientes/Mattilda.png" />
+        <img src="/src/components/component-venta/img-clientes/Mattilda.png" alt="Mattilda" />
     </div>
-    <div class="cliente pisa">
+    <div class="cliente">
         <!-- pisa seguridad -->
-        <img src="/src/components/component-venta/img-clientes/Pisa-seguridad.png" />
+        <img src="/src/components/component-venta/img-clientes/Pisa-seguridad.png" alt="Pisa Seguridad" />
     </div>
-    <div class="cliente spacenet">
+    <div class="cliente">
         <!-- spacenet -->
-        <img src="/src/components/component-venta/img-clientes/SPACENET.png" />
+        <img src="/src/components/component-venta/img-clientes/SPACENET.png" alt="SPACENET" />
     </div>
-    <div class="cliente kolors">
+    <div class="cliente">
         <!-- kolors -->
-        <img src="/src/components/component-venta/img-clientes/Kolors.png" />
+        <img src="/src/components/component-venta/img-clientes/Kolors.png" alt="Kolors" />
     </div>
-    <div class="cliente Labotec">
-        <img src="/src/components/component-venta/img-clientes/Labotec.png" />
+    <div class="cliente">
+        <!-- Labotec -->
+        <img src="/src/components/component-venta/img-clientes/Labotec.png" alt="Labotec" />
     </div>
-    <div class="cliente Asesoria">
-        <img src="/src/components/component-venta/img-clientes/Asesoria.png" />
+    <div class="cliente">
+        <!-- Asesoria -->
+        <img src="/src/components/component-venta/img-clientes/Asesoria.png" alt="Asesoría" />
     </div>
-    <div class="cliente RANDOM">
+    <div class="cliente">
         <!-- RANDOM -->
-        <img src="/src/components/component-venta/img-clientes/incognita.png" />
+        <img src="/src/components/component-venta/img-clientes/incognita.png" alt="Random" />
     </div>
 </div>
 <style>
-    *{
-        font-family: montserrat;
+    * {
+        font-family: Montserrat, sans-serif;
     }
+
+    .clientes {
+        text-align: center;
+    }
+
+    .clientes-1 {
+        margin-inline: 10%;
+    }
+
+    .clientes h2 {
+        color: blue;
+        font-weight: bold;
+    }
+
     .grid-layout {
         display: flex;
         flex-flow: row wrap;
@@ -69,24 +85,22 @@
         margin: 6%;
         background-color: darkblue;
         border-radius: 0.7em;
+        gap: 10px;
     }
-    .clientes {
-        flex-grow: 1;
 
+    .cliente {
+        flex-grow: 1;
     }
-    .grid-layout img:hover {
-        transform: scale(1.2);
-        background-color: #000000;
-    }
-    .clientes h2 {
-        /* color: #2486df;*/
-        color: blue;
-        font-weight: bold;
-        text-align: center;
-    }
-    img {
+
+    .grid-layout img {
         width: 250px;
         height: 250px;
         border-radius: 13px;
+        transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .grid-layout img:hover {
+        transform: scale(1.2);
+        background-color: #000;
     }
 </style>

@@ -8,10 +8,22 @@ import ToggleBtn from "../components/component-venta/toggle.astro";
 import Marcas from "../components/component-venta/marcas.astro";
 import Clientes from "../components/component-venta/clientes.astro";
 import ProcesoCompra from "../components/component-venta/proceso.astro";
+import Dropdown from "../components/Dropdown.astro";
 ---
 
 <Layout title="ECONOMIC SALES DE MEXICO SA DE CV">
-	<NavFija />
+	<!-- MENU -->
+	<div class="barra">
+		<img src="/src/pages/img/Logo-pro.png">
+	</div>
+	<div class="nav-fija">
+		<NavFija />
+	</div>
+	<div class="nav-pop">
+		<Dropdown />
+	</div>
+	<!-- MENU -->
+
 	<header>
 		<h1>VENTA DE EQUIPO DE COMPUTO</h1>
 	</header>
@@ -39,6 +51,44 @@ import ProcesoCompra from "../components/component-venta/proceso.astro";
 		font-weight: bold;
 		font-family: montserrat;
 	}
+	.barra{
+       display: none;
+        width: 100%;
+        background-color: rgb(0, 0, 175);
+        height: 160px;
+        text-align: center;
+        padding-top: 1em;
+    }
+    .barra img{
+        max-width: 95%;
+        height:80%;
+    }
+	@media (max-width: 750px) {
+        .nav-fija {
+            display: none;
+        }
+        .nav-pop {
+            visibility: visible;
+            width: 100%;
+            background-color: rgba(0, 58, 159, 0.567);
+        }
+        .navs {
+            visibility: visible;
+        }
+        .barra{
+            display:block;
+        }
+    }
+	@media (max-width:515px){
+		header h1{
+			font-size: 2em;
+			
+		}
+		header{
+			text-align: center;
+		}
+	}
+
 	@media(max-width:400px){
         header h1{
             font-size: 2em;
