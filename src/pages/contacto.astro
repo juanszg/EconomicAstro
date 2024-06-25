@@ -67,7 +67,33 @@ import DarkMode from "../components/BotonDark.astro";
             </div>
         </form>
     </div> 
-
+    <!-- FORMULARIO -->
+     <div class="contenedor2">
+         <div class="parrafo">
+             <p>
+                 Nuestros numeros de contacto
+             </p>
+             <hr>
+         </div>
+         <div class="numeros">
+             <p>
+                 Linea 1: (55) 9036-3348<br><br>
+ 
+                 Linea 2: (55) 5293-9827
+             </p>
+         </div>
+         <div class="mail">
+             <p>
+                 Nuestro correo
+             </p>
+             <hr>
+         </div>
+        <div class="ventasec">
+            <p>
+                ventas@economicsales.com
+            </p>
+         </div>
+     </div>
     <div class="texto-2">
         <p>
             En Economic Sales, nos enorgullece brindar un servicio de atención
@@ -86,6 +112,15 @@ import DarkMode from "../components/BotonDark.astro";
     body {
         background-color:whitesmoke; 
         font-family: montserrat;
+    }
+    hr{
+        width: 50%;
+        border: 2px solid;
+        position: relative;
+        left: 25%;
+    }
+    body.dark hr{
+        border-color: white;
     }
     body.dark h2{
         color: whitesmoke;
@@ -145,6 +180,38 @@ import DarkMode from "../components/BotonDark.astro";
         width: 70%;
         margin-left: 15%;
         
+    }
+    .contenedor2{
+        margin-top: 1.5em;
+    }
+    .numeros{
+        text-align: center;
+    }
+    .numeros p{
+        font-size: 1.5em;
+        font-weight: 800;
+    }
+    .parrafo{
+        text-align: center;
+    }
+    .parrafo p{
+        font-size: 2em;
+        font-weight: 900;
+    }
+    .ventasec{
+        text-align: center;
+    }
+    .ventasec p{
+        font-size: 1.5em;
+        font-weight: 800;
+    }
+    .mail {
+        text-align: center;
+        margin-top: 2.5em;
+    }
+    .mail p{
+        font-size: 2em;
+        font-weight: 900;
     }
     header h1 {
         text-align: center;
@@ -216,6 +283,20 @@ import DarkMode from "../components/BotonDark.astro";
         header h1{
         font-size: 2em; 
         margin-top: 2em;
+    }
+    }
+    @media (max-width:450px){
+        .numeros p{
+        font-size: 1.2em;
+    }
+    .parrafo p{
+        font-size: 1.3em;
+    }
+    .ventasec p{
+        font-size: 1.2em;
+    }
+    .mail p{
+        font-size: 1.3em;
     }
     }
    

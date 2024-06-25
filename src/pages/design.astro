@@ -35,8 +35,14 @@ import DarkMode from "../components/BotonDark.astro";
         <DarkMode />
     </div>
     <header>
-        <h1>DISEÑO</h1>
+        <div class="logo-design">
+             <img src="/src/components/comp-design/img/Designpro.gif">
+        </div>
+        <!--<h1>DISEÑO</h1> -->
     </header>
+    <div class="slogan">
+        <h2>CONVIRTIENDO TU MARCA EN UN SUEÑO HECHO REALIDAD</h2>
+    </div>
     <Proyectos />
     
 
@@ -93,8 +99,52 @@ import DarkMode from "../components/BotonDark.astro";
             display:block;
         }
     }
-  
-    header h1 {
+    .logo-design {
+        width: 100%;
+        height: 100%;
+    }
+    .logo-design img {
+        width: 100%;
+        height: 100%;
+        scale: .7;
+    }
+    .slogan{
+        text-align: center;
+        height: 0px;
+    }
+    .slogan h2{
+        position: relative;
+        top: -220px;
+        font-size: 2.7rem;
+        padding: 2em;
+        font-weight: 900;
+    }
+    body.dark .slogan h2{
+        color: whitesmoke;
+    }
+    @media (max-width:860px){
+        .slogan{
+        text-align: center;
+        height: 200px;
+    }
+       .slogan h2{
+            font-size: 1.7em;
+            position: relative;
+            top: 0px;
+    }
+}
+    @media(max-width:500px){
+        .slogan{
+        text-align: center;
+        height: 200px;
+    }
+        .slogan h2{
+            position: relative;
+            top: 0px;
+        font-size: 1.5rem;
+    }
+    }
+    /*header h1 {
         text-align: center;
         font-size: 4em;
         color: aliceblue;
@@ -111,6 +161,7 @@ import DarkMode from "../components/BotonDark.astro";
         font-weight: bold;
         font-family: montserrat;
     }
+        */
     @media (max-width:700px){
         header h1{
             font-size: 3em;

@@ -7,35 +7,38 @@
         .switch {
             z-index: 999;
             position: absolute;
-            top: 18px;
-            left: 10%;
+            top: 25px;
+            left: 5%;
             background: rgb(26, 8, 60);
             border: none;
             border-radius: 1000px;
             display: flex;
             cursor: pointer;
             width: 50px;
-            height: 30px;
+            height: 25px;
             position: fixed;
         }
         .switch::after {
             z-index: 999;
             content: "";
             display: block;
-            width: 30px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
             position: absolute;
-            background: rgba(251, 251, 251, 0.547);
+            /*background: rgba(251, 251, 251, 0.547);*/
+            background: rgba(25, 194, 255, 0.547);
             top: 0;
             left: 0;
             right: unset;
             border-radius: 100px;
             transition: 0.3s ease all;
-            box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+           /* box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);*/
+           box-shadow: 0px 0px 2px 2px rgba(181, 16, 16, 0.2);
         }
         .switch.active {
             z-index: 999;
-            background-color: orange;
+            /*background-color: orange;*/
+            background-color: whitesmoke;
         }
         .switch.active::after {
             z-index: 999;
