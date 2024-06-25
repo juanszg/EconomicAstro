@@ -1,5 +1,8 @@
-
+---
+import DarkMode from "../components/BotonDark.astro";
+---
 <!---------------------------------- GRID CARTAS -------------------------------------------------->
+<body>
 <div id="grid-cartas">
     <div class="carta">
         <a href="/BLOG/blog.html">
@@ -9,30 +12,33 @@
             <h3 class="categoria"><br>BLOG</h3>
             <p class="descripcion"></p>
         </a>
-    </div>
+    </div> 
+<a href="/venta">
     <div class="carta">
-        <a href="/venta">
+       
             <p class="iconocarta">
                 <img src="IMG cartas/Venta_De_Equipo.png" alt="icono computadora">
             </p>
             <h3 class="categoria">VENTA DE EQUIPO</h3>
             <p class="descripcion"></p>
-        </a>
     </div>
+ </a>
+<a href="/design">
     <div class="carta">
         <p class="iconocarta"><img src="IMG cartas/pintura.png" alt="icono pinturas">
         </p>
         <h3 class="categoria">DISEÑO</h3>
         <p class="descripcion">Diseño logotipo <br> Rebranding</p>
     </div>
+</a>
+<a href="/contacto">
     <div class="carta">
-        <a href="/CONTACTO/contacto.html">
             <p class="iconocarta"><img src="IMG cartas/telefonorojo.png" alt="icono telefono">
             </p>
             <h3 class="categoria">CONTACTO</h3>
             <p class="descripcion">Medios de contacto y ubicación</p>
-        </a>
     </div>
+</a>
     <div class="carta">
         <a href="/FAQ/faq.html">
             <p class="iconocarta">
@@ -43,6 +49,7 @@
         </a>
     </div>
 </div>
+</body>
 <!-- 
 <li class="link-card">
 	<a href={href}>
@@ -120,6 +127,12 @@ h3{
 	background-color: gainsboro;
 	overflow: hidden;
 }
+body.dark .carta{
+	background-color: rgb(0, 0, 168);
+}
+body.dark a{
+	color:whitesmoke;
+}
 
 .carta a {
 	text-decoration: none;
@@ -141,14 +154,22 @@ h3{
 	transform: scale(1.1);
 	transition: all 0.3s;
 }
+body.dark .carta:hover{
+	background-color: gainsboro;
+}
 
 .carta:hover .descripcion {
 	color: white;
 	font-size: 10px;
 }
-
+body.dark .carta:hover .descripcion{
+	color: rgb(0, 0, 168);
+}
 .carta:hover .categoria {
 	color: whitesmoke;
+}
+body.dark .carta:hover .categoria {
+	color: rgb(0, 0, 168);
 }
 
 .iconocarta img {

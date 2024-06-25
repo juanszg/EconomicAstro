@@ -1,12 +1,10 @@
 ---
 import NavFija from "../components/navFija.astro";
-import NavPop from "../components/navPop.astro";
 import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
-import Carrusel from "../components/Carrusel.astro";
 import Medallas from "../components/comp-nosotros/medallas.astro";
 import Dropdown from "../components/Dropdown.astro";
-import Barra from "../components/Barra.astro";
+import DarkMode from "../components/BotonDark.astro";
 ---
 
 <link
@@ -22,22 +20,22 @@ import Barra from "../components/Barra.astro";
 <body>
    <div class="barra">
         <!--<h2>ECONOMIC SALES DE MEXICO</h2>-->
-        <img src="/src/pages/img/Logo-pro.png">
+        <img src="/src/pages/img/_Logo-pro.png">
     </div>
-  
-    
     <Layout title="Nosotros">
         <div class="nav-fija">
             <NavFija />
         </div>
-        <!-- <div class="navs">
-<img src="/src/components/img/GIF-3.gif" width="250" height="250" />
-</div>-->
         <div class="nav-pop">
             <!-- <NavPop /> -->
             <Dropdown />
         </div>
-
+        <div class="boton-dark">
+			<DarkMode />
+		</div>
+<!-- <div class="navs">
+<img src="/src/components/img/GIF-3.gif" width="250" height="250" />
+</div>-->
         <header>
             <h1>NOSOTROS</h1>
         </header>
@@ -128,6 +126,9 @@ import Barra from "../components/Barra.astro";
         color: black;
         font-size: 1.5em;
     }
+    body.dark .texto-1{
+        color: whitesmoke;
+    }
     .texto-2 {
         text-align: center;
         position: relative;
@@ -137,6 +138,9 @@ import Barra from "../components/Barra.astro";
         color: black;
         font-size: 1.5em;
     }
+    body.dark .texto-2{
+        color: whitesmoke;
+    }
     .img {
         text-align: center;
     }
@@ -144,6 +148,9 @@ import Barra from "../components/Barra.astro";
         filter: invert(75%);
         width: 50%;
         height: 50%;
+    }
+    body.dark .img img{
+        filter: invert(0%);
     }
     .nav-pop {
         visibility: hidden;

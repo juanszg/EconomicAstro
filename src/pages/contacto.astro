@@ -3,6 +3,8 @@ import NavFija from "../components/navFija.astro";
 import NavPop from "../components/navPop.astro";
 import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
+import Dropdown from "../components/Dropdown.astro";
+import DarkMode from "../components/BotonDark.astro";
 ---
 
 <link
@@ -17,7 +19,20 @@ import Layout from "../layouts/Layout.astro";
     crossorigin="anonymous"></script>
 <body>
     <Layout title="Patrocinios" />
-    <NavFija />
+     <!-- MENU -->
+	<div class="barra">
+		<img src="/src/pages/img/_Logo-pro.png">
+	</div>
+	<div class="nav-fija">
+		<NavFija />
+	</div>
+	<div class="nav-pop">
+		<Dropdown />
+	</div>
+	<!-- MENU -->
+    <div class="boton-dark">
+        <DarkMode />
+    </div>
     <header>
         <h1>CONTACTO</h1>
     </header>
@@ -72,6 +87,43 @@ import Layout from "../layouts/Layout.astro";
         background-color:whitesmoke; 
         font-family: montserrat;
     }
+    body.dark h2{
+        color: whitesmoke;
+    }
+    body.dark p{
+        color: whitesmoke;
+    }
+    .barra{
+       display: none;
+        width: 100%;
+        background-color: rgb(0, 0, 175);
+        height: 160px;
+        text-align: center;
+        padding-top: 1em;
+    }
+    .barra img{
+        max-width: 95%;
+        height:80%;
+    }
+	.nav-pop {
+        visibility: hidden;
+    }
+	@media (max-width: 750px) {
+        .nav-fija {
+            display: none;
+        }
+        .nav-pop {
+            visibility: visible;
+            width: 100%;
+            background-color: rgba(0, 58, 159, 0.567);
+        }
+        .navs {
+            visibility: visible;
+        }
+        .barra{
+            display:block;
+        }
+    }
     /*.contenedor {
       width: 80%;
       margin-left: 10%;
@@ -120,6 +172,9 @@ import Layout from "../layouts/Layout.astro";
         color: rgb(0, 6, 10);
         margin-top: 3em;
         font-size: 1.5em;
+    }
+    body.dark .contactito{
+        color: whitesmoke;
     }
 
     .contactito form nombre {

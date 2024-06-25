@@ -1,0 +1,134 @@
+
+
+
+
+<html>
+<section class="grid-1">
+    <div class="CEI"><img src="/src/components/comp-design/img/CEI_opt.jpg"></div>
+
+    <div class="ALFA"><img src="/src/components/comp-design/img/ALFA_opt.jpg"></div>
+</section>
+<div class="grid">
+    <div class="CRIS"><img src="/src/components/comp-design/img/CRIS_ESTUDIO_opt.jpg"> </div>
+    <div class="Fantasma"><img src="/src/components/comp-design/img/FANTASMA_opt.jpg"></div>
+</div>
+<div class="Sonne"><img src="/src/components/comp-design/img/SONNE_PSYCHOLOGIE_opt.jpg"></div>
+</html>
+<style>
+/*.FlexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    overflow: auto;
+    flex-direction: row;
+}
+
+.FlexContainer div {
+    border-radius: 1em;
+    width: 550px;
+    height: 340px;
+    margin: 5px;
+    background-color: lightblue;
+}
+    */
+/* CODIGO 2  */
+/*
+.grid-1 {
+    display: grid;
+    grid-auto-rows: 22rem;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    text-align: center;
+    grid-gap: 10px;
+    margin-inline: 5%;
+}
+
+.CEI img{
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+    object-fit: cover; 
+    cursor:pointer;
+}
+.ALFA img{
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+    object-fit: cover; /* cover, contain, fill, scale-down, none 
+    cursor:pointer;
+    background-size: cover;
+}
+    */
+/* CODIGO 3 */
+.grid-1 {
+    display: grid;
+    grid-auto-rows: 22rem;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    text-align: center;
+    gap: 10px; /* Cambiado a gap para compatibilidad con CSS Grid moderno */
+    margin:5%;
+}
+
+.CEI img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.ALFA img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Cambiado a contain */
+    cursor: pointer;
+    background-size: cover;
+}
+
+.grid{
+    display: grid;
+    grid-auto-rows: 22rem;
+    grid-template-columns: repeat(auto-fit, minmax (15rem,1fr));
+   text-align: center;
+}
+.CRIS img{
+    width: 90%;
+    height: 100%;
+    border-radius: .8em;
+    object-fit: cover; /* cover, contain, fill, scale-down, none */
+    transition: transform 0.2s;
+    cursor:pointer;
+}
+.CRIS img:hover{
+    transform: scale(1.05);
+}
+.Fantasma img{
+    width: 90%;
+    height: 100%;
+    border-radius: .8em;
+    object-fit: cover; /* cover, contain, fill, scale-down, none */
+    transition: transform 0.2s;
+     cursor:pointer;
+}
+.Fantasma img:hover{
+    transform: scale(1.05);
+   
+}
+.Sonne img{
+    margin-top: 1em;
+    width: 50%;
+    height: 50%;
+    border-radius: 5em;
+    object-fit: cover; /* cover, contain, fill, scale-down, none */
+    cursor:pointer;
+}
+.Sonne{
+    text-align: center;
+    background-image: url(/src/pages/img/fondo2.png);
+    background-size: cover; /* Ajusta la imagen para que cubra todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat;
+}
+</style>

@@ -9,12 +9,13 @@ import Marcas from "../components/component-venta/marcas.astro";
 import Clientes from "../components/component-venta/clientes.astro";
 import ProcesoCompra from "../components/component-venta/proceso.astro";
 import Dropdown from "../components/Dropdown.astro";
+import DarkMode from "../components/BotonDark.astro";
 ---
 
 <Layout title="ECONOMIC SALES DE MEXICO SA DE CV">
 	<!-- MENU -->
 	<div class="barra">
-		<img src="/src/pages/img/Logo-pro.png">
+		<img src="/src/pages/img/_Logo-pro.png">
 	</div>
 	<div class="nav-fija">
 		<NavFija />
@@ -23,6 +24,9 @@ import Dropdown from "../components/Dropdown.astro";
 		<Dropdown />
 	</div>
 	<!-- MENU -->
+	<div class="boton-dark">
+		<DarkMode />
+	</div>
 
 	<header>
 		<h1>VENTA DE EQUIPO DE COMPUTO</h1>
@@ -35,6 +39,10 @@ import Dropdown from "../components/Dropdown.astro";
 	<Footer />
 </Layout>
 <style>
+	 *{
+        margin: 0px;
+        padding: 0px
+    }
 	header h1 {
 		font-size: 4em;
 		color: aliceblue;
@@ -59,9 +67,13 @@ import Dropdown from "../components/Dropdown.astro";
         text-align: center;
         padding-top: 1em;
     }
+	
     .barra img{
         max-width: 95%;
         height:80%;
+    }
+	.nav-pop {
+        visibility: hidden;
     }
 	@media (max-width: 750px) {
         .nav-fija {
