@@ -10,14 +10,19 @@
             <span id="ventas">0</span>
             <div id="estadisticas"><p>Equipos vendidos Economic Sales</p></div>
         </div>
-
+    
         <script>
             const totalVentas = 110500;
             const duracionAnimacion = 7000; // Duración en milisegundos (7 segundos)
             let ventasActuales = 0;
-
+    
             function mostrarEstadisticas() {
                 const estadisticas = document.getElementById("estadisticas");
+                if (!estadisticas) {
+                    console.error("Elemento con id 'estadisticas' no encontrado");
+                    return;
+                }
+    
                 const observer = new IntersectionObserver(
                     (entries) => {
                         if (entries[0].isIntersecting) {
@@ -28,25 +33,26 @@
                     {
                         root: null, // Observar ventana completa
                         threshold: 0, // Mostrar al entrar en la vista
-                    },
+                    }
                 );
                 observer.observe(estadisticas);
             }
-
+    
             function iniciarAnimacion() {
                 if (ventasActuales < totalVentas) {
-                    ventasActuales += Math.floor(
-                        totalVentas / (duracionAnimacion / 100),
-                    );
-                    document.getElementById("ventas").textContent =
-                        ventasActuales.toLocaleString();
+                    ventasActuales += Math.floor(totalVentas / (duracionAnimacion / 100));
+                    const ventasElement = document.getElementById("ventas");
+                    if (ventasElement) {
+                        ventasElement.textContent = ventasActuales.toLocaleString();
+                    }
                     setTimeout(iniciarAnimacion, 10);
                 }
             }
-
+    
             mostrarEstadisticas(); // Iniciar la observación de la sección
         </script>
     </body>
+    
     <style>
         .ventas{
             text-align: center;

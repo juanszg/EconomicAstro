@@ -245,20 +245,27 @@
             }
         }
     </style>
+<script>
+    const toggleBtn = document.querySelector(".toggle-btn") as HTMLElement | null;
+    const toggleBtnIcon = document.querySelector(".toggle-btn i") as HTMLElement | null;
+    const dropDown = document.querySelector(".dropdown-menu") as HTMLElement | null;
 
-    <script>
-        const toggleBtn = document.querySelector(".toggle-btn");
-        const toggleBtnIcon = document.querySelector(".toggle-btn i");
-        const dropDown = document.querySelector(".dropdown-menu");
-
+    if (toggleBtn && dropDown && toggleBtnIcon) {
         toggleBtn.onclick = function () {
             dropDown.classList.toggle("open");
-
             const isOpen = dropDown.classList.contains("open");
 
-            toggleBtnIcon.classList = isOpen
-                ? "fa-solid fa-xmark"
-                : "fa-solid fa-bars";
+            if (isOpen) {
+                toggleBtnIcon.classList.remove("fa-bars");
+                toggleBtnIcon.classList.add("fa-xmark");
+            } else {
+                toggleBtnIcon.classList.remove("fa-xmark");
+                toggleBtnIcon.classList.add("fa-bars");
+            }
         };
-    </script>
+    } else {
+        console.error("Uno o más elementos no se encontraron en el DOM.");
+    }
+</script>
+
 </html>
