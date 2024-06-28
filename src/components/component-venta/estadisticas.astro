@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <div class="ventas">
+            <h1>Ventas totales:</h1>
+            <span id="ventas">0</span>
+            <div id="estadisticas"><p>Equipos vendidos Economic Sales</p></div>
+        </div>
+
+        <script>
+            const totalVentas = 110500;
+            const duracionAnimacion = 7000; // Duración en milisegundos (7 segundos)
+            let ventasActuales = 0;
+
+            function mostrarEstadisticas() {
+                const estadisticas = document.getElementById("estadisticas");
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        if (entries[0].isIntersecting) {
+                            iniciarAnimacion();
+                            observer.unobserve(estadisticas); // Desactivar observador
+                        }
+                    },
+                    {
+                        root: null, // Observar ventana completa
+                        threshold: 0, // Mostrar al entrar en la vista
+                    },
+                );
+                observer.observe(estadisticas);
+            }
+
+            function iniciarAnimacion() {
+                if (ventasActuales < totalVentas) {
+                    ventasActuales += Math.floor(
+                        totalVentas / (duracionAnimacion / 100),
+                    );
+                    document.getElementById("ventas").textContent =
+                        ventasActuales.toLocaleString();
+                    setTimeout(iniciarAnimacion, 10);
+                }
+            }
+
+            mostrarEstadisticas(); // Iniciar la observación de la sección
+        </script>
+    </body>
+    <style>
+        .ventas{
+            text-align: center;
+            font-family: montserrat;
+            font-weight: 700;
+        }
+        #ventas{
+            font-size: 1.5rem;
+        }
+        body.dark .ventas{
+            color: whitesmoke;
+        }
+    </style>
+</html>

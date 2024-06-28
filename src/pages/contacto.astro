@@ -67,13 +67,14 @@ import DarkMode from "../components/BotonDark.astro";
             </div>
         </form>
     </div> 
+    <hr>
     <!-- FORMULARIO -->
      <div class="contenedor2">
          <div class="parrafo">
              <p>
                  Nuestros numeros de contacto
              </p>
-             <hr>
+             
          </div>
          <div class="numeros">
              <p>
@@ -81,19 +82,22 @@ import DarkMode from "../components/BotonDark.astro";
  
                  Linea 2: (55) 5293-9827
              </p>
+            
          </div>
          <div class="mail">
              <p>
                  Nuestro correo
              </p>
-             <hr>
+             
          </div>
         <div class="ventasec">
             <p>
                 ventas@economicsales.com
             </p>
+           
          </div>
      </div>
+     <hr>
     <div class="texto-2">
         <p>
             En Economic Sales, nos enorgullece brindar un servicio de atención
@@ -190,6 +194,11 @@ import DarkMode from "../components/BotonDark.astro";
     .numeros p{
         font-size: 1.5em;
         font-weight: 800;
+        background-color: gainsboro;
+        border-radius: .5em;
+    }
+    body.dark .numeros p{
+        background-color:rgb(37, 0, 118);
     }
     .parrafo{
         text-align: center;
@@ -204,6 +213,11 @@ import DarkMode from "../components/BotonDark.astro";
     .ventasec p{
         font-size: 1.5em;
         font-weight: 800;
+        background-color: gainsboro;
+        border-radius: .5em;
+    }
+    body.dark .ventasec p{
+        background-color: rgb(37, 0, 118);
     }
     .mail {
         text-align: center;
@@ -212,6 +226,7 @@ import DarkMode from "../components/BotonDark.astro";
     .mail p{
         font-size: 2em;
         font-weight: 900;
+       
     }
     header h1 {
         text-align: center;

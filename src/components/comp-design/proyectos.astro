@@ -1,21 +1,41 @@
-
-
-
-
 <html>
-<section class="grid-1">
-    <div class="CEI"><img src="/src/components/comp-design/img/CEI_opt.jpg"></div>
+    <body>
+        <section class="grid-1">
+            <div class="CEI">
+                <img src="/src/components/comp-design/img/CEI_opt.jpg" />
+                CEI - CENTRO DE ESTUDIOS INTERNACIONAL<br />Rebranding, diseño de
+                logotico y publicaciones
+            </div>
 
-    <div class="ALFA"><img src="/src/components/comp-design/img/ALFA_opt.jpg"></div>
-</section>
-<div class="grid">
-    <div class="CRIS"><img src="/src/components/comp-design/img/CRIS_ESTUDIO_opt.jpg"> </div>
-    <div class="Fantasma"><img src="/src/components/comp-design/img/FANTASMA_opt.jpg"></div>
-</div>
-<div class="Sonne"><img src="/src/components/comp-design/img/SONNE_PSYCHOLOGIE_opt.jpg"></div>
+            <div class="ALFA">
+                <img src="/src/components/comp-design/img/ALFA-nuevo-op.jpg" />
+                ALFA - SOLUCIONES CONTABLES<br />Diseño de nueva imagen en redes
+                y logotipo
+            </div>
+        </section>
+        <!-- grid 2 -->
+        <div class="grid">
+            <div class="CRIS">
+                <img src="/src/components/comp-design/img/Cris 1-pro.jpg" /><br/>
+                CRIS ESTUDIO<br /><br />
+            </div>
+            <div class="Sonne">
+                <img src="/src/components/comp-design/img/Sonne_ 1-op.jpg" /><br/>
+                SONNE PSYCHOLOGIE
+            </div>
+            <div class="Pines">
+                <img src="/src/components/comp-design/img/Pines 1-op.jpg" /><br/>
+                PINES
+            </div>
+        </div>
+        <!-- FANTASMA APARTE -->
+        <div class="Fantasma">
+            <img src="/src/components/comp-design/img/fantasma-1.jpg" />FANTASMA
+        </div>
+    </body>
 </html>
 <style>
-/*.FlexContainer {
+    /*.FlexContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -34,8 +54,8 @@
     background-color: lightblue;
 }
     */
-/* CODIGO 2  */
-/*
+    /* CODIGO 2  */
+    /*
 .grid-1 {
     display: grid;
     grid-auto-rows: 22rem;
@@ -61,74 +81,288 @@
     background-size: cover;
 }
     */
-/* CODIGO 3 */
-.grid-1 {
-    display: grid;
-    grid-auto-rows: 22rem;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    text-align: center;
-    gap: 10px; /* Cambiado a gap para compatibilidad con CSS Grid moderno */
-    margin:5%;
-}
+    /* CODIGO 3 */
+    .grid-1 {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-row-gap: 50px;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        text-align: center;
+        grid-column-gap: 10px; /* Cambiado a gap para compatibilidad con CSS Grid moderno */
+        margin: 5%;
+    }
+    body {
+        font-family: "Macondo";
+        font-weight: 700;
+    }
+    .CEI {
+        font-size: 1em;
+        position: relative; /* Añadido */
+        display: inline-block; /* Añadido para contener el pseudo-elemento dentro del contenedor */
+    }
 
-.CEI img {
-    width: 100%;
-    height: 100%;
-    border-radius: 1em;
-    object-fit: cover;
-    cursor: pointer;
-}
+    .CEI img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        cursor: pointer;
+        transition: opacity 0.3s ease; /* Añadido para suavizar la transición de opacidad */
+    }
 
-.ALFA img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Cambiado a contain */
-    cursor: pointer;
-    background-size: cover;
-}
+    .CEI img:hover {
+        opacity: 0;
+    }
 
-.grid{
-    display: grid;
-    grid-auto-rows: 22rem;
-    grid-template-columns: repeat(auto-fit, minmax (15rem,1fr));
-   text-align: center;
-}
-.CRIS img{
-    width: 90%;
-    height: 100%;
-    border-radius: .8em;
-    object-fit: cover; /* cover, contain, fill, scale-down, none */
-    transition: transform 0.2s;
-    cursor:pointer;
-}
-.CRIS img:hover{
-    transform: scale(1.05);
-}
-.Fantasma img{
-    width: 90%;
-    height: 100%;
-    border-radius: .8em;
-    object-fit: cover; /* cover, contain, fill, scale-down, none */
-    transition: transform 0.2s;
-     cursor:pointer;
-}
-.Fantasma img:hover{
-    transform: scale(1.05);
-   
-}
-.Sonne img{
-    margin-top: 1em;
-    width: 50%;
-    height: 50%;
-    border-radius: 5em;
-    object-fit: cover; /* cover, contain, fill, scale-down, none */
-    cursor:pointer;
-}
-.Sonne{
-    text-align: center;
-    background-image: url(/src/pages/img/fondo2.png);
-    background-size: cover; /* Ajusta la imagen para que cubra todo el contenedor */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat;
-}
+    .CEI::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; /* Cambiado para cubrir el mismo tamaño que la imagen original */
+        background-image: url(/src/components/comp-design/img/CEI-new-back.jpg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity 0.7s ease;
+        cursor: pointer;
+    }
+
+    .CEI:hover::after {
+        opacity: 1;
+    }
+
+    body.dark .CEI {
+        color: whitesmoke;
+    }
+    .ALFA {
+        font-size: 1em;
+        position: relative;
+        display: inline-block;
+    }
+
+    .ALFA img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        cursor: pointer;
+        display: block;
+        transition: opacity 0.3s ease;
+    }
+    .ALFA img :hover {
+        opacity: 0;
+    }
+    .ALFA::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(/src/components/comp-design/img/Alfa-back-op.jpg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity 0.7s ease;
+        cursor: pointer;
+    }
+    .ALFA:hover::after {
+        opacity: 1;
+    }
+
+    body.dark .ALFA {
+        color: whitesmoke;
+    }
+
+    .grid {
+        display: grid;
+        grid-auto-rows: 25rem;
+        grid-template-columns: repeat(4, 1fr);
+        text-align: center;
+        gap: 10px;
+        margin: 5%;
+    }
+
+    .CRIS {
+        grid-area: 1 / 1 / 2 / 3;
+        font-size: 1.5em;
+        position: relative; /* Añadido */
+        display: inline-block;
+    }
+
+    .CRIS img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* cover, contain, fill, scale-down, none */
+        cursor: pointer;
+    }
+    .CRIS img:hover {
+        opacity: 0;
+    }
+    .CRIS::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(/src/components/comp-design/img/Cris-back-op.jpg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity .7s ease;
+        cursor: pointer;
+    }
+    .CRIS:hover::after {
+        opacity: 1;
+    }
+    body.dark .CRIS {
+        color: whitesmoke;
+    }
+    /* SONNE PSYCHOLOGIE */
+    .Sonne {
+        grid-area: 1 / 3 / 2 / 4;
+        text-align: center;
+        font-size: 1.5em;
+        position: relative;
+        display: inline-block;
+    }
+
+    .Sonne img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        cursor: pointer;
+        transition: opacity 0.7s ease;
+    }
+
+    .Sonne img:hover {
+        opacity: 0;
+    }
+
+    .Sonne::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(/src/components/comp-design/img/SonneBack-op.jpg);
+        background-size: contain; /* Cambiado a contain */
+        background-position: center; /* Centrar la imagen */
+        background-repeat: no-repeat; /* Evitar que la imagen se repita */
+        opacity: 0;
+        transition: opacity 0.7s ease;
+        cursor: pointer;
+    }
+
+    .Sonne:hover::after {
+        opacity: 1;
+    }
+
+    body.dark .Sonne {
+        color: whitesmoke;
+    }
+    .Pines {
+        grid-area: 1 / 4 / 2 / 5;
+        font-size: 1.5em;
+        position: relative; /* Añadido */
+        display: inline-block;
+    }
+    .Pines img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* cover, contain, fill, scale-down, none */
+        cursor: pointer;
+        transition: opacity 0.7s ease;
+    }
+    .Pines img:hover {
+        opacity: 0;
+    }
+    .Pines::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; /* Cambiado para cubrir el mismo tamaño que la imagen original */
+        background-image: url(/src/components/comp-design/img/Pines-back-op.jpg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity 0.7s ease;
+        cursor: pointer;
+    }
+    .Pines:hover::after {
+        opacity: 1;
+    }
+    body.dark .Pines {
+        color: whitesmoke;
+    }
+    @media (max-width: 890px) {
+        .grid {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+        .CRIS {
+            grid-area: 1 / 1 / 2 / 5;
+        }
+        .Sonne {
+            grid-area: 2 / 1 / 3 / 3;
+        }
+        .Pines {
+            grid-area: 2 / 3 / 3 / 5;
+        }
+    }
+    .Fantasma {
+        text-align: center;
+        font-size: 1.5em;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: 280px;
+    }
+
+    .Fantasma img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        cursor: pointer;
+        transition: opacity 0.7s ease;
+    }
+
+    .Fantasma img:hover {
+        opacity: 0;
+    }
+
+    .Fantasma::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(/src/components/comp-design/img/Fantasma-pro2.jpg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity 0.7s ease;
+        cursor: pointer;
+        z-index: 1; /* Asegura que esté sobre la imagen */
+        box-sizing: border-box; /* Incluye cualquier padding y border en el tamaño */
+        border: 1px solid transparent; /* Agrega un borde transparente para asegurar que se alinee correctamente */
+    }
+
+    .Fantasma:hover::after {
+        opacity: 1;
+    }
+
+    body.dark .Fantasma {
+        color: whitesmoke;
+    }
 </style>
