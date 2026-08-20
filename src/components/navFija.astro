@@ -12,7 +12,7 @@
                 <li><a href="/design">DISEÑO</a></li>
                 <li><a href="/venta">VENTA DE EQUIPO</a></li>
                 <li><a href="/patrocinios">PATROCINIOS</a></li>
-                <li><a href="/contacto"> CONTACTO</a></li>
+                <li><a href="/contacto"> COTIZA AQUI</a></li>
             </ul>
         </nav>
     </div>
@@ -21,6 +21,9 @@
             font-family: montserrat;
         }
         #menu {
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
             color: aliceblue;
             flex-flow: row;
             /*margin: 10%; */
@@ -34,7 +37,7 @@
             flex-wrap: wrap;
             align-items: center;
             place-items: center;
-            width: 80%;
+            width: 60%;
             height: 100%;
             font-weight: bold;
             list-style: none;
@@ -70,12 +73,13 @@
             margin-left: 17%;
         }
         .company-name {
+          display: flex;
             opacity: 0;
             transition: opacity 0.5s;
-            position: relative;
-            left: 13%;
-            top: 25px;
+            /* left: 13%;
+            top: 25px; */
             color:whitesmoke;
+            text-align: center;
         
         }
        a{
@@ -85,10 +89,13 @@
             font-family: montserrat;
             font-weight: 900;
             font-size: 1.2em;
-
+           position: relative;
+           left: 30%;
+            
         }
         span a{
              text-decoration: none;
+            
         }
         .scrolled .company-name {
             opacity: 1;

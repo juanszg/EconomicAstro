@@ -9,6 +9,7 @@ import Footer from "../components/Footer.astro";
 import Carrusel from "../components/Carrusel.astro";
 import Dropdown from "../components/Dropdown.astro";
 import DarkMode from "../components/BotonDark.astro";
+import Whats from "../components/whats.astro";
 ---
 
 <!-- hola -->
@@ -34,9 +35,9 @@ import DarkMode from "../components/BotonDark.astro";
             <Dropdown />
         </div>
 		<!-- MENU  -->
-		<div class="boton-dark">
+		<!-- <div class="boton-dark">
 			<DarkMode />
-		</div>
+		</div> -->
 		
 		<!--<Titulo /> -->
 		<Carrusel />
@@ -59,6 +60,7 @@ import DarkMode from "../components/BotonDark.astro";
 			</div>
 			<Slider />
 			<Card />
+			<Whats/>
 		</div>
 	</body>
 	<Footer />
@@ -81,6 +83,7 @@ import DarkMode from "../components/BotonDark.astro";
 		padding: 0px;
 		margin: 0px;
 		font-family: "Montserrat", sans-serif;
+		background-color: #FFF8ED !important;
 	}
 	.boton-dark{
 		z-index: 999 !important;
@@ -147,7 +150,7 @@ import DarkMode from "../components/BotonDark.astro";
 		margin-bottom: 1em;
 	}
 	/* BARRA NAV */
-	@media (max-width: 750px) {
+	@media (max-width: 1125px) {
         .nav-fija {
             display: none;
         }

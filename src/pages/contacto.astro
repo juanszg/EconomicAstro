@@ -4,7 +4,8 @@ import NavPop from "../components/navPop.astro";
 import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
 import Dropdown from "../components/Dropdown.astro";
-import DarkMode from "../components/BotonDark.astro";
+import Whats from "../components/whats.astro";
+// import DarkMode from "../components/BotonDark.astro";
 ---
 
 <link
@@ -29,10 +30,11 @@ import DarkMode from "../components/BotonDark.astro";
 	<div class="nav-pop">
 		<Dropdown />
 	</div>
+    	<Whats/>
 	<!-- MENU -->
-    <div class="boton-dark">
+    <!-- <div class="boton-dark">
         <DarkMode />
-    </div>
+    </div> -->
     <header>
         <h1>CONTACTO</h1>
     </header>
@@ -46,28 +48,42 @@ import DarkMode from "../components/BotonDark.astro";
         </h2>
     </div>
     <!------------------------------------- FORMULARIO ------------------------->
-    <div class="contactito">
-        <form
-            action="mailto:ventas@economicsales.com"
-            method="post"
-            enctype="text/plain"
-        >
-            <label for="nombre"><b>NOMBRE</b></label>
-            <input type="text" id="nombre" name="nombre" required /><br /><br />
+  <div class="cyber-container">
+  <form action="#" method="POST" class="cyber-form" id="quote-form">
+    <h2 class="form-title">SOLICITAR COTIZACIÓN</h2>
+    <p class="form-subtitle">Inicia tu proyecto con nosotros hoy mismo.</p>
 
-            <label for="correo"><b>CORREO ELECTRÓNICO</b><br /></label>
-            <input type="email" id="correo" name="correo" required /><br /><br
-            />
+    <div class="input-group">
+      <label for="nombre">NOMBRE</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre..." required />
+    </div>
 
-            <label for="mensaje"><b>MENSAJE</b></label><br />
-            <textarea id="mensaje" name="mensaje" rows="2" required
-            ></textarea><br />
-            <div class="enviar">
-                <input class="bg-primary" type="submit" value="ENVIAR" />
-            </div>
-        </form>
-    </div> 
-    <hr>
+    <div class="input-group">
+      <label for="correo">CORREO ELECTRÓNICO</label>
+      <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required />
+    </div>
+
+    <div class="input-group">
+      <label for="servicio">SERVICIO DE INTERÉS</label>
+      <select id="servicio" name="servicio" required>
+        <option value="" disabled selected>Selecciona una opción...</option>
+        <option value="equipo">Venta de Equipo de Cómputo</option>
+        <option value="bot">Bot API Correos Automatizados</option>
+        <option value="alianzas">Alianzas Empresariales</option>
+        <option value="otro">Otro</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label for="mensaje">MENSAJE / DETALLES</label>
+      <textarea id="mensaje" name="mensaje" rows="4" placeholder="Describe lo que necesitas cotizar..." required></textarea>
+    </div>
+
+    <button type="submit" class="cyber-btn">
+      <span>ENVIAR SOLICITUD</span>
+    </button>
+  </form>
+</div>
     <!-- FORMULARIO -->
      <div class="contenedor2">
          <div class="parrafo">
@@ -114,7 +130,7 @@ import DarkMode from "../components/BotonDark.astro";
         font-size: montserrat;
     }
     body {
-        background-color:whitesmoke; 
+        background-color:#FFF8ED; 
         font-family: montserrat;
     }
     hr{
@@ -314,5 +330,159 @@ import DarkMode from "../components/BotonDark.astro";
         font-size: 1.3em;
     }
     }
-   
+   /* Variables de color basadas en tu paleta */
+  :root {
+    --crema: #FFF8ED;
+    --azul-brillante: #0075B9;
+    --azul-claro: #629FCB;
+    --azul-oscuro: #004C7F;
+  }
+
+  .cyber-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    /* Fondo transparente para que se adapte al contenedor padre, 
+       pero puedes ponerle var(--crema) si tu página es clara */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .cyber-form {
+    background-color: var(--azul-oscuro);
+    width: 100%;
+    max-width: 550px;
+    padding: 40px;
+    border-radius: 12px;
+    border: 2px solid var(--azul-brillante);
+    /* Efecto Neón en la caja */
+    box-shadow: 0 0 20px rgba(0, 117, 185, 0.4), 
+                inset 0 0 15px rgba(98, 159, 203, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Adorno visual neón superior */
+  .cyber-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--azul-claro);
+    box-shadow: 0 0 15px var(--azul-claro);
+  }
+
+  .form-title {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--crema);
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 1.5px;
+    /* Texto brillante */
+    text-shadow: 0 0 10px var(--azul-brillante), 0 0 20px var(--azul-brillante);
+  }
+
+  .form-subtitle {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--azul-claro);
+    text-align: center;
+    font-size: 0.95rem;
+    margin: -15px 0 10px 0;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .input-group label {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--azul-claro);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .input-group input,
+  .input-group select,
+  .input-group textarea {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(255, 248, 237, 0.05); /* Fondo crema muy transparente */
+    border: 1px solid var(--azul-brillante);
+    color: var(--crema);
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  /* Personalizar el placeholder */
+  .input-group input::placeholder,
+  .input-group textarea::placeholder {
+    color: rgba(255, 248, 237, 0.4);
+  }
+
+  /* Efecto Neón al enfocar los inputs (escribir) */
+  .input-group input:focus,
+  .input-group select:focus,
+  .input-group textarea:focus {
+    outline: none;
+    border-color: var(--azul-claro);
+    background-color: rgba(0, 76, 127, 0.8);
+    box-shadow: 0 0 12px rgba(98, 159, 203, 0.6);
+  }
+
+  /* Estilos especiales para el select para que haga match */
+  .input-group select option {
+    background-color: var(--azul-oscuro);
+    color: var(--crema);
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .cyber-btn {
+    background-color: var(--azul-brillante);
+    color: var(--crema);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    padding: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    /* Resplandor inicial */
+    box-shadow: 0 0 10px var(--azul-brillante);
+  }
+
+  .cyber-btn:hover {
+    background-color: var(--azul-claro);
+    color: var(--azul-oscuro);
+    /* Aumentar el resplandor al pasar el cursor */
+    box-shadow: 0 0 20px var(--azul-claro), 0 0 40px var(--azul-claro);
+    transform: translateY(-2px);
+  }
+
+  /* Ajustes para móviles */
+  @media (max-width: 480px) {
+    .cyber-form {
+      padding: 25px 20px;
+    }
+    .form-title {
+      font-size: 1.6rem;
+    }
+  }
 </style>

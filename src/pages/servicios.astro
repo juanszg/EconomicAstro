@@ -1,0 +1,208 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import NavFija from "../components/navFija.astro";
+import Titulo from "../components/hola.astro";
+import NavPop from "../components/navPop.astro";
+import Slider from "../components/slider.astro";
+import Footer from "../components/Footer.astro";
+import Carrusel from "../components/Carrusel.astro";
+import Dropdown from "../components/Dropdown.astro";
+import DarkMode from "../components/BotonDark.astro";
+import Whats from "../components/whats.astro";
+import ServiceCard from "../components/serviceCard.astro";
+---
+
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mis Servicios</title>
+  </head>
+
+     <Layout title="Servicios">
+    <div class="nav-fija">
+            <NavFija />
+        </div>
+        <div class="nav-pop">
+            <!-- <NavPop /> -->
+            <Dropdown />
+        </div>
+        	<Whats/>
+  <body>
+    <main class="cards-container">
+      
+    
+      <ServiceCard 
+        title="VENTA DE EQUIPO DE CÓMPUTO" 
+        description="Armado de fábrica o con especificaciones a la medida, HP, ASUS, Lenovo, Epson, BENQ, Apple, Dell, Sony, Samsung, Canon, Acer, Microsoft, Logitech, Razer, Xzeal, Brother, lo que sea, lo tenemos." 
+        imageSrc="/public/img-servicios/Iconos.png" 
+        href="/venta-equipo" 
+      />
+
+      <ServiceCard 
+        title="BOT API CORREOS AUTOMATIZADOS, CON IA" 
+        description="Servicio de envío de 1000 correos de tu marca diariamente a clientes potenciales, el bot investiga al cliente, redacta una propuesta, adjunta documentos y los envía desde tu dirección de correo, todo completamente automatizado." 
+        imageSrc="/public/img-servicios/Iconos 2.png" 
+        href="/bot-correos" 
+      />
+
+      <ServiceCard 
+        title="ALIANZAS EMPRESARIALES" 
+        description="Vende a tus empleados equipos de cómputo deducibles de impuestos que se descuenten de su pago en nómina. Desde smartphones hasta equipos gamer, haz feliz a tus empleados ayudándoles a conseguir lo que siempre quisieron, pagando menos, tú y ellos." 
+        imageSrc="/public/img-servicios/Iconos 3.png" 
+        href="/alianzas" 
+      />
+
+        <ServiceCard 
+        title="SERVICIOS DE COLABORACIÓN Y CONFERENCIAS" 
+        description="Configuración de video-colaboración en Microsoft, CISCO, POLY, Logitech, Jabra, Lenovo, aplicaciones de conferencia web, salas." 
+        imageSrc="/public/img-servicios/Iconos 4.png" 
+        href="/alianzas" 
+      />
+
+        <ServiceCard 
+        title="INSTALACIÓN DE SERVIDORES DE DATACENTER" 
+        description="Sistemas de respaldo, sistemas hiperconvergentes, escritorios virtuales, migración de datos, CISCO, CITRIX, VEEAM, etc." 
+        imageSrc="/public/img-servicios/Iconos 5.png" 
+        href="/alianzas" 
+      />
+
+        <ServiceCard 
+        title="PSICOLOGÍA ORGANIZACIONAL" 
+        description="Consultoría, mediaciones, optimización de proyectos, análisis de clima organizacional y soluciones de productividad para su empresa." 
+        imageSrc="/public/img-servicios/Iconos 6.png" 
+        href="/alianzas" 
+      />
+
+        <ServiceCard 
+        title="INSTALACIÓN Y CONFIGURACIÓN DE EQUIPOS DE RED" 
+        description="Redes de conectividad, CISCO, ARUBA, TP-LINK, Linksys, Juniper, creación de VPN´S y gateways, monitoreo de red, configuración remota." 
+        imageSrc="/public/img-servicios/Iconos 7.png" 
+        href="/alianzas" 
+      />
+
+        <ServiceCard 
+        title="IMPLEMENTACIÓN Y CONFIGURACIÓN DE EQUIPOS CLOUD" 
+        description="Soluciones en la nube, Microsoft Amure, CISCO, Adobe, Amazon Web Services, Nube Privada, migración de máquinas virtuales, site recovery." 
+        imageSrc="/public/img-servicios/Iconos 8.png" 
+        href="/alianzas" 
+      />
+              <ServiceCard 
+        title="INSTALACIÓN DE VIGILANCIA PERIMETRAL DE SEGURIDAD FÍSICA" 
+        description="Seguridad física en redes CISCO, AXIS, ZKTECO, implementación de cámaras, controles de acceso, circuito cerrado, analíticas de cámaras." 
+        imageSrc="/public/img-servicios/Iconos 9.png" 
+        href="/alianzas" 
+      />
+                  <ServiceCard 
+        title="INSTALACIÓN DE VIGILANCIA PERIMETRAL DE CÍBER SEGURIDAD" 
+        description="Implementación de cíber vigilancia en redes CISCO, ESET, Microsoft, etc. Consolas de gestión central firewall, seguridad end-point." 
+        imageSrc="/public/img-servicios/Iconos 10.png" 
+        href="/alianzas" 
+      />
+                        <ServiceCard 
+        title="INSTALACIÓN DE CAPTURA DE DATOS Y PUNTOS DE VENTA" 
+        description="Implementación, mantenimiento preventivo y correctivo, creación de aplicativos móviles, consultoría. ELO, Datalogic, HP, etc." 
+        imageSrc="/public/img-servicios/Iconos 11.png" 
+        href="/alianzas" 
+      />
+                            <ServiceCard 
+        title="TECNOLOGÍA ESPECIAL (IA, API´S, CRM, SOFTWARE A LA MEDIDA, ETC.)" 
+        description="Fábrica de software, gobernanza de datos, analítica de datos y Power BI, test de rendimiento y calidad, destrucción de equipos." 
+        imageSrc="/public/img-servicios/Iconos 12.png" 
+        href="/alianzas" 
+      />
+                            <ServiceCard 
+        title="REPARACIÓN E INSTALACIÓN DE EQUIPO DE CÓMPUTO" 
+        description="Ayuda con garantías en equipos nuevos, reparación, escalado de RAM Y ROM en equipos antiguos, instalación de equipos" 
+        imageSrc="/public/img-servicios/Iconos 13.png" 
+        href="/alianzas" 
+      />
+                            <ServiceCard 
+        title="DISEÑO, DISEÑO WEB Y BRANDING INSTITUCIONAL" 
+        description="Creación y diseño de mercadotecnia, mejorar o rehacer su imagen corporativa, logo, estilo, branding, página web, versión celular." 
+        imageSrc="/public/img-servicios/Iconos 14.png" 
+        href="/alianzas" 
+      />
+                             <ServiceCard 
+        title="ARRENDAMIENTO Y FINANCIAMENTO DE EQUIPOS DE CÓMPUTO" 
+        description="Opciones de financiamiento, se requiere acta constitutiva (mínimo 4 años de constitución), identificaciones, constancias vigentes, etc." 
+        imageSrc="/public/img-servicios/Iconos 15.png" 
+        href="/alianzas" 
+      />
+
+
+
+
+
+    </main>
+    <Footer></Footer>
+  </body>
+  </Layout>
+</html>
+
+<style>
+
+  .cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #FAF5F0; /* Fondo beige claro similar a tu imagen de referencia */
+    min-height: 100vh;
+    border: 15px solid lightskyblue;
+  }
+    .nav-pop {
+        visibility: hidden;
+    }
+    @media (max-width: 750px) {
+        .nav-fija {
+            display: none;
+        }
+        .nav-pop {
+            visibility: visible;
+            width: 100%;
+            background-color: rgba(0, 58, 159, 0.567);
+        }
+        .navs {
+            visibility: visible;
+        }
+        .barra{
+            display:block;
+        }
+    }
+    @media (max-width: 580px) {
+        header h1 {
+            font-size: 2.5em;
+        }
+        .texto-1 {
+            font-size: 1.2em;
+        }
+        .texto-2 {
+            font-size: 1.2em;
+        }
+    }
+    @media (max-width: 400px) {
+        header h1 {
+            font-size: 2em;
+            margin-top: 2em;
+        }
+    }
+       .navs {
+        visibility: none;
+        background-color: darkblue;
+    }
+    .barra{
+       display: none;
+        width: 100%;
+        background-color: rgb(0, 0, 175);
+        height: 160px;
+        text-align: center;
+        padding-top: 1em;
+    }
+    .barra img{
+        max-width: 95%;
+        height:80%;
+    }
+</style>

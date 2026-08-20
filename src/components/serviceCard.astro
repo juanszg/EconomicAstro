@@ -1,0 +1,105 @@
+---
+// src/components/ServiceCard.astro
+
+interface Props {
+  title: string;
+  description: string;
+  imageSrc: string;
+  imageAlt?: string;
+  href?: string;
+}
+
+// Recibimos los datos dinámicos
+const { 
+  title, 
+  description, 
+  imageSrc, 
+  imageAlt = "Icono descriptivo", 
+  href = "#" 
+} = Astro.props;
+---
+
+<a href={href} class="service-card">
+  <div class="card-icon">
+    <img src={imageSrc} alt={imageAlt} />
+  </div>
+  <div class="card-content">
+    <h2 class="card-title">{title}</h2>
+    <p class="card-description">{description}</p>
+  </div>
+</a>
+
+<style>
+  .service-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #0070B8; /* Azul basado en tu imagen */
+    border-radius: 20px;
+    padding: 24px 32px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    max-width: 850px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+  /* Efecto de botón al pasar el mouse */
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-icon {
+    flex: 0 0 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 32px;
+  }
+
+  .card-icon img {
+    width: 100%;
+    height: auto;
+    /* max-height: 220px; */
+    object-fit: cover;
+    transform: scale(2);
+  }
+
+  .card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-title {
+    font-family: 'Arial Black', Impact, sans-serif; /* Tipografía gruesa sin patines */
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    margin: 0 0 12px 0;
+    letter-spacing: 0.5px;
+  }
+
+  .card-description {
+    font-family: 'Courier New', Courier, monospace; /* Tipografía tipo máquina de escribir */
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* Diseño responsivo para móviles */
+  @media (max-width: 768px) {
+    .service-card {
+      flex-direction: column;
+      padding: 20px;
+    }
+    .card-icon {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+</style>

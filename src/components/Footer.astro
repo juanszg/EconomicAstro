@@ -1,233 +1,144 @@
 <footer class="footer">
-	<div class="grupo1">
-		<!--COLOCAR CALSES .CLASE* NUMERO DE CLASES IGUALES EJEMPL .CLASE*3-->
-		<div class="box num1">
-			<h3 class="titulo-1">
-				Vendemos tecnología,<br />diseñamos alternativas<br
-				/>solucionamos problemas.<br />
-			</h3>
-			<a href="/POLITICA DE PRIVACIDAD/politica.html"
-				class="link-underline">
-				<p class="politica text-warning"> Política de privacidad<br /></p>
-			</a>
-			<p class="texto2023">
-				2023 ECONOMIC SALES DE MÉXICO, SA DE CV GROUP. <br />Empresa
-				responsable con el medio ambiente incorporada en CDMX bajo el
-				número 132,217.<br /> Registrada en el primer piso del edificio de
-				la Cámara de Comercio, Paseo de la Reforma #42, Juárez, Ciudad de
-				México.
-			</p>
-		</div>
-		<div class="box num2">
-			<h3><b>NUESTRAS REDES</b></h3>
-			<div class="logos">
-				<div class="minibox">
-					<a href="https://www.facebook.com/EconomicSalesDeMexicoSaDeCv?locale=es_LA"><img
-							src="img/facebooklogo.png"
-							alt="logo facebook",class="max"/></a>
-				</div>
-				<div class="minibox">
-					<a href="https://www.instagram.com/economicsalesmx/?igshid=MzRlODBiNWFlZA%3D%3D"><img
-							src="img/instagramlogo.png"
-							alt="logo instagram", class="max"/></a>
-				</div>
-				<div class="minibox">
-					<a href="https://www.linkedin.com/company/economic-sales-de-m%C3%A9xico-sa-de-cv/mycompany/?viewAsMember=true"><img
-							src="img/linkedinlogo.png"
-							alt="logo linkedin",
-							class="max"/></a>
-				</div>
-			</div>
-		</div>
-		<div class="box num3">
-			<figure>
-				<a href="index.html">
-					<h3 class="tituloEc">ECONOMIC SALES DE MÉXICO</h3>
-				</a>
-			</figure>
-		</div>
-	</div>
+  <div class="footer-container">
+    
+    <!-- Columna 1: Información y Legal -->
+    <div class="footer-box info-box">
+      <h3 class="footer-title">
+        Vendemos tecnología,<br />
+        diseñamos alternativas,<br />
+        solucionamos problemas.
+      </h3>
+      <a href="/POLITICA DE PRIVACIDAD/politica.html" class="politica-link">
+        Política de privacidad
+      </a>
+      <p class="legal-text">
+        2026 ECONOMIC SALES DE MÉXICO, SA DE CV GROUP.<br />
+        Empresa responsable con el medio ambiente incorporada en CDMX bajo el número 132,217.<br />
+        Registrada en el primer piso del edificio de la Cámara de Comercio, Paseo de la Reforma #42, Juárez, Ciudad de México.
+      </p>
+    </div>
+
+    <!-- Columna 2: Redes Sociales -->
+    <div class="footer-box social-box">
+      <h3 class="footer-title">NUESTRAS REDES</h3>
+      <div class="logos">
+        <a href="https://www.facebook.com/EconomicSalesDeMexicoSaDeCv?locale=es_LA" target="_blank" rel="noopener noreferrer">
+          <img src="img/facebooklogo.png" alt="Logo Facebook" class="social-icon" />
+        </a>
+        <a href="https://www.instagram.com/economicsalesmx/?igshid=MzRlODBiNWFlZA%3D%3D" target="_blank" rel="noopener noreferrer">
+          <img src="img/instagramlogo.png" alt="Logo Instagram" class="social-icon" />
+        </a>
+        <a href="https://www.linkedin.com/company/economic-sales-de-m%C3%A9xico-sa-de-cv/mycompany/?viewAsMember=true" target="_blank" rel="noopener noreferrer">
+          <img src="img/linkedinlogo.png" alt="Logo LinkedIn" class="social-icon" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Columna 3: Marca -->
+    <div class="footer-box brand-box">
+      <a href="index.html">
+        <h2 class="titulo-brand">ECONOMIC SALES DE MÉXICO</h2>
+      </a>
+    </div>
+
+  </div>
 </footer>
+
 <style>
-	footer {
-		position: relative;
-		width: 100%;
-		background-color: darkblue;
-	}
-	.grupo1 {
-		/*display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
-        grid-auto-rows: 22rem;
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-		margin-inline: 5%;*/
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
-		align-content: center;
-		width: 100%;
-		margin-top: 3em;
-		overflow: auto;
-		flex-direction: row;
-		font-family: montserrat;
-	
-	
-	}
-	.grupo1 .box {
-		width: 350px;
-		height: 250px;
-		margin: 10px;
+  .footer {
+    width: 100%;
+    background-color: darkblue;
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    padding: 3rem 1.5rem;
+    box-sizing: border-box;
+  }
 
-		/*background-color: rgb(0, 0, 82);*/
-	}
-	.grupo1 .num1{
-		padding: .5em;	
-	}
-	.grupo1 h3{
-		font-weight: 900;
-	}
-	.grupo1 .num3{
-		text-align: center;
-		padding: .5em;
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-	}
-	.grupo1 .num2{
-		text-align: center;
-		padding: .5em;
-		
-	}
+  .footer-box {
+    flex: 1 1 300px;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-	h3 {
-		color: whitesmoke;
-		font-size: 1.3em;
-		font-weight: 900;
-	}
-	p {
-		font-size: 0.65rem;
-		color: whitesmoke;
-	}
-	.num3 a{
-		text-decoration: none;
-	}
-	.num3 h3{
-		font-size: 3em;
-	}
-	.num1 a{
-		text-decoration: none;
-		
-	}
-	.logos {
-		width: 350px;
-		height: 150px;
-		margin-top: 25px;
-		text-align: center;
-		margin-left: 8%;
-	}
+  .info-box {
+    text-align: left;
+    align-items: flex-start;
+  }
 
-	.minibox {
-		width: 100px;
-		float: left;
-		height: 100px;
-	}
+  .footer-title {
+    font-size: 1.1rem;
+    font-weight: 900;
+    margin: 0 0 0.8rem 0;
+    line-height: 1.3;
+    color: whitesmoke;
+  }
 
-	.max {
-		max-width: 80px;
-		height: 80px;
-	}
-	/*.footer {
-    position: relative;
-	width: 100%;
-	background-color: darkblue;
-	margin-top: 25px;
-}
+  .politica-link {
+    color: #ffc107; /* Color tipo warning / amarillo */
+    font-size: 0.85rem;
+    text-decoration: underline;
+    margin-bottom: 0.8rem;
+    display: inline-block;
+  }
 
-.footer .grupo1 {
-	width: 100%;
-	max-width: 1200px;
-	margin: auto;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 50px;
-	padding: 10px 0px;
-}
+  .legal-text {
+    font-size: 0.7rem;
+    line-height: 1.4;
+    color: whitesmoke;
+    opacity: 0.9;
+    margin: 0;
+  }
 
-.footer .grupo1 .box figure {
-	/*width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+  .logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+  }
 
-.footer .grupo1 .box figure img {
-	width: 160%;
-}
+  .social-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+  }
 
-.footer .box h2 {
-	font-size: 25px;
-	font-family: montserrat;
-	color: aliceblue;
-	margin-top: 25px;
-}
+  .social-icon:hover {
+    transform: scale(1.1);
+  }
 
-.footer .box h3 {
-	font-size: 20px;
-	font-family: montserrat;
-	color: aliceblue;
-	margin-top: 25px;
-}
+  .brand-box a {
+    text-decoration: none;
+    color: inherit;
+  }
 
-.footer .box h4 {
-	font-size: 45px;
-	font-family: montserrat;
-	color: aliceblue;
-	text-align: end;
-	margin-left: -48%;
-}
+  .titulo-brand {
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0;
+    color: whitesmoke;
+  }
 
-.footer .box p {
-	font-size: 11px;
-	font-family: montserrat;
-	color: aliceblue;
-	text-align: justify;
-	margin-top: 25px;
-}
-
-.footer .box a {
-	box-sizing: content-box;
-	width: 200px;
-	height: 200px;
-	text-decoration: none;
-}
-
-.footer .grupo1 .num1 .texto2023 {
-	text-align: justify;
-}
-
-.footer .grupo1 .num1 {
-	margin-left: 10%;
-}
-
-.footer .grupo1 .num1 .politica {
-	text-decoration: underline;
-}
-
-.logos {
-	width: 350px;
-	height: 150px;
-	margin-top: 25px;
-}
-
-.minibox {
-	width: 100px;
-	float: left;
-	height: 100px;
-}
-
-.max {
-	max-width: 80px;
-	height: 80px;
-}
-*/
+  /* Ajuste para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .info-box {
+      text-align: center;
+      align-items: center;
+    }
+  }
 </style>
