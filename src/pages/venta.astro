@@ -1,15 +1,12 @@
 ---
 import CarruselVenta from "../components/component-venta/carrousel-venta.astro";
-import NavFija from "../components/navFija.astro";
-import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
 import ToggleBtn from "../components/component-venta/toggle.astro";
 import Marcas from "../components/component-venta/marcas.astro";
 import Clientes from "../components/component-venta/clientes.astro";
 import ProcesoCompra from "../components/component-venta/proceso.astro";
-import Dropdown from "../components/Dropdown.astro";
 import Estadisticas from "../components/component-venta/estadisticas.astro";
-import Whats from "../components/whats.astro";
+
 ---
 
 <Layout title="ECONOMIC SALES DE MEXICO SA DE CV">
@@ -17,13 +14,7 @@ import Whats from "../components/whats.astro";
 	<div class="barra">
 		<img src="/src/pages/img/_Logo-pro.png">
 	</div>
-	<div class="nav-fija">
-		<NavFija />
-	</div>
-	<div class="nav-pop">
-		<Dropdown />
-	</div>
-		<Whats/>
+
 	<!-- MENU -->
 	<!-- <div class="boton-dark">
 		<DarkMode />
@@ -39,7 +30,7 @@ import Whats from "../components/whats.astro";
 	<Clientes />
 	<Estadisticas />
 	<ProcesoCompra />
-	<Footer />
+
 </Layout>
 <style>
 	 *{

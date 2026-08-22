@@ -1,55 +1,128 @@
 ---
+import NavFija from "../components/navFija.astro";
+import NavPop from "../components/navPop.astro";
+import Footer from "../components/Footer.astro";
+import Dropdown from "../components/Dropdown.astro";
+import Whats from "../components/whats.astro";
+
 interface Props {
-	title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
-
-
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" href="iconominibueno.ico" />
-		<link rel="stylesheet" href="estilos.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-		<link rel="stylesheet" href="bootstrap/bootstrap2/css/bootstrap.min.css" />
-	   
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-		
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Astro description" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+        
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/iconominibueno.ico" />
+        <link rel="stylesheet" href="/estilos.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        <link rel="stylesheet" href="/bootstrap/bootstrap2/css/bootstrap.min.css" />
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
+        <title>{title}</title>
+    </head>
+    <body>
+        <header>
+            <div class="nav-fija">
+                <NavFija />
+            </div>
+            <div class="nav-pop">
+                <Dropdown />
+            </div>
+            <!-- <NavPop /> -->
+        </header>
+
+        <main>
+            <slot />
+        </main>
+
+        <footer>
+            <Whats />
+            <Footer />
+        </footer>
+    </body>
 </html>
+
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #0093dd;
-		font-family: montserrat;
-		/*background-size: 224px;*/
-	}
-	code {
-		font-family:montserrat;
-	}
+    :root {
+        --accent: 136, 58, 234;
+        --accent-light: 224, 204, 250;
+        --accent-dark: 49, 10, 101;
+        --accent-gradient: linear-gradient(
+            45deg,
+            rgb(var(--accent)),
+            rgb(var(--accent-light)) 30%,
+            white 60%
+        );
+    }
+
+    html {
+        font-family: 'Montserrat', sans-serif;
+        /* background: #0093dd; */
+		border: 10px solid pink ;
+		
+    }
+
+    code {
+        font-family: 'Montserrat', monospace;
+    }
+
+    .nav-pop {
+        visibility: hidden;
+    }
+
+    /* @media (max-width: 1125px) {
+        .nav-fija {
+            display: none;
+        }
+        .nav-pop {
+            visibility: visible;
+            width: 100%;
+            background-color: rgba(0, 58, 159, 0.567);
+        }
+        .navs {
+            visibility: visible;
+        }
+        .barra {
+            display: block;
+        }
+    } */
+
+	@media (max-width: 1125px) {
+      /* 1. Hacemos que el contenedor principal del menú se quede pegado arriba */
+      header {
+          position: sticky;
+          top: 0;
+          z-index: 9999; /* Asegura que el menú pase por encima del resto del contenido */
+      }
+
+      .nav-fija {
+          display: none;
+      }
+      
+      .nav-pop {
+          visibility: visible;
+          width: 100%;
+          background-color: rgba(0, 58, 159, 0.567);
+      }
+      
+      .navs {
+          visibility: visible;
+      }
+      
+      .barra {
+          display: block;
+      }
+  }
 </style>
