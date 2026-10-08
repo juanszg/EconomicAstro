@@ -1,192 +1,36 @@
 ---
-
 import Layout from "../layouts/Layout.astro";
 import Medallas from "../components/comp-nosotros/medallas.astro";
-
-
 ---
-
-<link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-    crossorigin="anonymous"
-/>
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-<body>
-   <Layout title="Nosotros">
-   <div class="barra">
-        <!--<h2>ECONOMIC SALES DE MEXICO</h2>-->
-        <img src="/src/pages/img/_Logo-pro.png">
-    </div>
-<!--     
-        <div class="nav-fija">
-            <NavFija />
-        </div>
-        <div class="nav-pop">
-            <!-- <NavPop /> -->
-            <!-- <Dropdown />
-        </div> -->
-        	<!-- <Whats/> --> -->
-        <!-- <div class="boton-dark">
-			<DarkMode />
-		</div> -->
-<!-- <div class="navs">
-<img src="/src/components/img/GIF-3.gif" width="250" height="250" />
-</div>-->
-        <header>
-            <h1>NOSOTROS</h1>
-        </header>
-        <div class="texto-1">
-            <p>
-                Nos enorgullece ser una empresa mexicana establecida en 2006. <br
-                />Contamos con un equipo altamente capacitado, con más de <strong
-                    >20 años de experiencia</strong
-                > en el campo de la informatica y la venta de equipo de cómputo Estamos
-                comprometidos en satisfacer las necesidades de su empresa ofreciendo
-                siempre <strong
-                    >precios competitivos y un servicio excepcional.</strong
-                >
-            </p>
-        </div>
-        <div class="img">
-            <img src="/src/components/comp-nosotros/img/ciudad-cdmx.png" />
-        </div>
-        <div class="texto-2">
-            <h2>NUESTRO COMPROMISO</h2>
-            <p>
-                Nuestro compromiso Estamos comprometidos a abordar los retos de
-                la sociedad actual a tráves de nuestra operación diaria y
-                nuestro compromiso con la responsabilidad social. Como <strong
-                    >proveedores de equipos de cómputo</strong
-                > a precios bajos y con excelentes servicio de entrega personalizado,
-                sabemos que la tecnologia es un recurso fundamental para mejorar
-                la calidad de las personas y de las empresas.
-            </p>
-            <Medallas />
-        </div>
-  
-    </Layout>
-</body>
+<Layout title="Nosotros" description="Conoce Economic Sales de México: experiencia, tecnología y atención para impulsar a las empresas.">
+  <section class="about-page">
+    <header class="about-hero"><span class="eyebrow">ECONOMIC SALES DE MÉXICO</span><h1>La tecnología abre caminos.<br /><span>Nosotros te ayudamos a recorrerlos.</span></h1><p>Somos el socio tecnológico que convierte necesidades reales en soluciones confiables.</p></header>
+    <section class="story-section" aria-labelledby="historia-title">
+      <div class="story-copy"><span class="eyebrow">Nuestra historia</span><h2 id="historia-title">Experiencia que se pone de tu lado</h2><p>Somos una empresa mexicana establecida en 2006. Reunimos más de 20 años de experiencia en informática y venta de equipo de cómputo para acompañar a organizaciones en sus retos tecnológicos.</p><p>Escuchamos lo que cada empresa necesita y proponemos opciones claras, precios competitivos y un servicio cercano desde la selección hasta la entrega.</p><a class="text-link" href="/servicios">Conoce nuestros servicios <span aria-hidden="true">→</span></a></div>
+      <figure class="city-frame"><img src="/media/nosotros-ciudad.webp" alt="Vista panorámica de la Ciudad de México, sede de Economic Sales" loading="lazy" decoding="async" /><figcaption>Una empresa mexicana, al servicio de empresas en todo el país.</figcaption></figure>
+    </section>
+    <section class="commitment-section" aria-labelledby="compromiso-title"><div class="commitment-copy"><span class="eyebrow">Nuestro compromiso</span><h2 id="compromiso-title">Tecnología útil, relaciones duraderas</h2><p>Creemos que la tecnología puede mejorar la manera de trabajar y abrir oportunidades. Por eso acercamos equipos y soluciones con atención personalizada, precios justos y responsabilidad en cada proyecto.</p><p>Trabajamos para que cada inversión tecnológica tenga sentido para las personas y para el crecimiento de la empresa.</p></div><Medallas /></section>
+  </section>
+</Layout>
 <style>
-    * {
-        font-size: montserrat;
-    }
-    body {
-        background-color: whitesmoke;
-    }
-    .navs {
-        visibility: none;
-        background-color: darkblue;
-    }
-    .barra{
-       display: none;
-        width: 100%;
-        background-color: rgb(0, 0, 175);
-        height: 160px;
-        text-align: center;
-        padding-top: 1em;
-    }
-    .barra img{
-        max-width: 95%;
-        height:80%;
-    }
-    /*.barra h2{
-        color: whitesmoke;
-        font-weight: 900;
-        font-family: montserrat;
-       padding: 2em;
-    }*/
-    
-    header h1 {
-        text-align: center;
-        font-size: 4em;
-        color: aliceblue;
-        margin-top: 7%;
-        background: rgb(66, 66, 249);
-        background: linear-gradient(
-            90deg,
-            rgb(66, 66, 249) 0%,
-            rgb(5, 242, 255) 100%
-        );
-        margin: 0.5em;
-        padding: 1em;
-        border-radius: 10px;
-        font-weight: bold;
-        font-family: montserrat;
-    }
-    .texto-1 {
-        text-align: center;
-        position: relative;
-        left: 15%;
-        width: 70%;
-        font-weight: 600;
-        color: black;
-        font-size: 1.5em;
-    }
-    body.dark .texto-1{
-        color: whitesmoke;
-    }
-    .texto-2 {
-        text-align: center;
-        position: relative;
-        left: 15%;
-        width: 70%;
-        font-weight: 600;
-        color: black;
-        font-size: 1.5em;
-    }
-    body.dark .texto-2{
-        color: whitesmoke;
-    }
-    .img {
-        text-align: center;
-    }
-    .img img {
-        filter: invert(75%);
-        width: 50%;
-        height: 50%;
-    }
-    body.dark .img img{
-        filter: invert(0%);
-    }
-    .nav-pop {
-        visibility: hidden;
-    }
-    @media (max-width: 750px) {
-        .nav-fija {
-            display: none;
-        }
-        .nav-pop {
-            visibility: visible;
-            width: 100%;
-            background-color: rgba(0, 58, 159, 0.567);
-        }
-        .navs {
-            visibility: visible;
-        }
-        .barra{
-            display:block;
-        }
-    }
-    @media (max-width: 580px) {
-        header h1 {
-            font-size: 2.5em;
-        }
-        .texto-1 {
-            font-size: 1.2em;
-        }
-        .texto-2 {
-            font-size: 1.2em;
-        }
-    }
-    @media (max-width: 400px) {
-        header h1 {
-            font-size: 2em;
-            margin-top: 2em;
-        }
-    }
+  .about-page { overflow: hidden; padding: 0 clamp(1.1rem,6vw,6rem) 5rem; background: radial-gradient(ellipse at 85% 0%,#e4f6ff 0,transparent 34%),#f5f8fc; }
+  .about-hero { max-width: 1120px; margin: auto; padding: clamp(4.2rem,10vw,8rem) 0 4rem; text-align: center; }
+  .eyebrow { display: inline-block; color: #0878c9; font-size: .72rem; font-weight: 800; letter-spacing: .19em; text-transform: uppercase; }
+  .about-hero h1 { margin: 1rem 0; color: #112c4b; font-size: clamp(2.2rem,5vw,4.5rem); line-height: 1.13; letter-spacing: -.055em; }
+  .about-hero h1 span { color: #0788ca; }
+  .about-hero > p { max-width: 660px; margin: 1rem auto 0; color: #5b6e83; font-size: clamp(1rem,1.8vw,1.2rem); line-height: 1.8; }
+  .story-section,.commitment-section { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); align-items: center; gap: clamp(2rem,6vw,6rem); max-width: 1180px; margin: 0 auto; padding: 3rem 0 5rem; }
+  .story-copy h2,.commitment-copy h2 { margin: .75rem 0 1rem; color: #112c4b; font-size: clamp(1.8rem,3vw,2.7rem); line-height: 1.2; letter-spacing: -.04em; }
+  .story-copy p,.commitment-copy p { color: #596e84; font-size: 1rem; line-height: 1.85; }
+  .text-link { display: inline-flex; align-items: center; gap: .7rem; margin-top: .5rem; color: #0878c9; font-weight: 750; text-decoration: none; }
+  .text-link span { transition: transform .2s; }.text-link:hover span { transform: translateX(5px); }
+  .city-frame { position: relative; margin: 0; padding: 1rem; border: 1px solid rgba(18,76,128,.09); border-radius: 28px; background: linear-gradient(145deg,#102e56,#0878c9); box-shadow: 0 25px 65px rgba(19,56,94,.2); animation: float-in 1s both; }
+  .city-frame img { display: block; width: 100%; aspect-ratio: 2.2; object-fit: contain; border-radius: 20px; }
+  .city-frame figcaption { padding: .9rem .8rem .4rem; color: #d9e9f8; font-size: .82rem; text-align: center; }
+  .commitment-section { grid-template-columns: 1fr; padding-top: 3rem; }
+  .commitment-copy { max-width: 800px; text-align: center; margin: auto; }
+  .commitment-copy p { max-width: 780px; margin-inline: auto; }
+  @keyframes float-in { from { opacity: 0; transform: translateY(35px) scale(.96) rotate(1deg); } to { opacity: 1; transform: translateY(0) scale(1) rotate(0); } }
+  @media (max-width: 800px) { .story-section { grid-template-columns: 1fr; gap: 2rem; } .story-copy { text-align: center; } .city-frame { max-width: 650px; margin: auto; } }
+  @media (prefers-reduced-motion: reduce) { .city-frame { animation: none; } }
 </style>

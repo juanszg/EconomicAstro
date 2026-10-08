@@ -1,15 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import NavFija from "../components/navFija.astro";
-import Titulo from "../components/hola.astro";
-import NavPop from "../components/navPop.astro";
 import Slider from "../components/slider.astro";
-import Footer from "../components/Footer.astro";
 import Carrusel from "../components/Carrusel.astro";
-import Dropdown from "../components/Dropdown.astro";
-import DarkMode from "../components/BotonDark.astro";
-import Whats from "../components/whats.astro";
 ---
 
 <!-- hola ES LA RAMA DE JUAN  -->
@@ -22,24 +15,9 @@ import Whats from "../components/whats.astro";
 		<!-- <NavPop />
 	</main>
      -->
-	<body>
 		
 		<!-- MENU  -->
-		<div class="barra">
-			<img src="/src/pages/img/_Logo-pro.png">
-		</div>
-		<!-- <div class="nav-fija">
-            <NavFija />
-        </div>
-		<div class="nav-pop">
-            <Dropdown />
-        </div> -->
-		<!-- MENU  -->
-		<!-- <div class="boton-dark">
-			<DarkMode />
-		</div> -->
-		
-		<!--<Titulo /> -->
+		<!-- La navegación y el pie de página se comparten desde Layout. -->
 		<Carrusel />
 		<div class="contenedor1">
 			<div class="textoec">
@@ -62,7 +40,6 @@ import Whats from "../components/whats.astro";
 			<Card />
 			<!-- <Whats/> -->
 		</div>
-	</body>
 	<!-- <Footer /> -->
 </Layout>
 
@@ -91,9 +68,11 @@ import Whats from "../components/whats.astro";
 
 	}
 	.contenedor1 {
-	   padding: 10%;
+		width: 100%;
+		padding: clamp(2.5rem, 5vw, 5rem) 0 0;
 		align-items: center;
-		border:15px solid lightskyblue;
+		border: 0;
+		background: #fff8ed;
 	}
 	.barra{
        display: none;

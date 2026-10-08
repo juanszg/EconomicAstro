@@ -1,226 +1,48 @@
 ---
-import NavFija from "../components/navFija.astro";
-import NavPop from "../components/navPop.astro";
-import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
-import Dropdown from "../components/Dropdown.astro";
-import Whats from "../components/whats.astro";
+const recognitions = [
+  { image: "/media/patrocinio-ipn.webp", alt: "Reconocimiento de patrocinio de Economic Sales en el IPN", tag: "Deporte y comunidad", title: "Carrera 11K del Instituto Politécnico Nacional", text: "Nos sumamos como patrocinadores a una iniciativa que celebra el esfuerzo, la salud y el orgullo de la comunidad politécnica." },
+  { image: "/media/patrocinio-carrera.webp", alt: "Cartel de la carrera 11K del Instituto Politécnico Nacional", tag: "Compromiso institucional", title: "Impulsamos el talento y la participación", text: "Acompañamos un encuentro que reúne a estudiantes, egresados y familias alrededor de una meta compartida." },
+  { image: "/media/patrocinio-idx.webp", alt: "Economic Sales presente en el evento de tecnología IDX", tag: "Innovación y tecnología", title: "Presentes en IDX, el encuentro tecnológico", text: "Participamos en espacios que acercan a las empresas a nuevas ideas, soluciones y tendencias del sector tecnológico." },
+];
 ---
-
-<link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-    crossorigin="anonymous"
-/>
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-<body>
-    <Layout title="Patrocinios" />
-    <!-- MENU -->
-	<div class="barra">
-		<img src="/src/pages/img/_Logo-pro.png">
-	</div>
-	<div class="nav-fija">
-		<NavFija />
-	</div>
-	<div class="nav-pop">
-		<Dropdown />
-	</div>
-    	<Whats/>
-	<!-- MENU -->
-    <!-- <div class="boton-dark">
-        <DarkMode />
-    </div> -->
-    <header>
-        <h1>PATROCINIOS</h1>
-    </header>
-    <div class="titulo">
-        <h2>Orgullosamente patrocinadores de la carrera 11K del
-            <span>Instituto Politecnico Nacional</span></h2>
-    </div>
-
-    <div class="grid-1">
-        <div class="imagen-ipn1">
-            <img src="/src//components/img/IPN-PATROCINADORES.jpeg" />
-        </div>
-        <div class="imagen-ipn2">
-            <img src="/src//components/img/PDF-CARRERA-IPN.png" />
-        </div>
-    </div>
-    <div class="titulo">
-         <h2>Economic Sales presente en el mayor evento de tecnologia del año</h2>
-    </div>
-   
-    <div class="IDX">
-        <img src="/src//components/img/IDX.jpg" />
-    </div>
-    <Footer />
-</body>
+<Layout title="Patrocinios" description="Reconocimientos, patrocinios e iniciativas que reflejan el compromiso de Economic Sales con México.">
+  <section class="sponsors-page">
+    <header class="sponsors-hero"><span class="eyebrow">Orgullo que compartimos</span><h1>Patrocinios y reconocimientos</h1><p>Creemos en apoyar las iniciativas que conectan a las personas con el deporte, la educación y la innovación.</p><div class="hero-line"></div></header>
+    <section class="recognition-list" aria-label="Reconocimientos y eventos patrocinados">
+      {recognitions.map((item, index) => <article class:list={["recognition", index % 2 ? "reverse" : ""]}>
+        <div class="recognition-visual"><div class="image-glow"></div><img src={item.image} alt={item.alt} loading="lazy" decoding="async" /></div>
+        <div class="recognition-copy"><span class="recognition-tag"><span></span>{item.tag}</span><span class="recognition-number">0{index + 1}</span><h2>{item.title}</h2><p>{item.text}</p><div class="recognition-rule"></div><span class="recognition-signature">Economic Sales de México</span></div>
+      </article>)}
+    </section>
+    <section class="sponsors-cta"><span class="eyebrow">Crecer en comunidad</span><h2>Las mejores alianzas crean impacto.</h2><p>¿Tu organización prepara una iniciativa que vale la pena impulsar?</p><a href="/contacto">Hablemos de tu proyecto <span aria-hidden="true">→</span></a></section>
+  </section>
+</Layout>
 <style>
-    * {
-        font-size: montserrat;
-        margin: 0px;
-        padding: 0px;
-    }
-    body {
-        background-color: whitesmoke;
-    }
-    .titulo{
-        padding: 3em;
-        text-align: center;
-        margin-top: 4em;
-    }
-    h2{
-        font-size: 1.7em;
-        font-family: montserrat;
-        font-weight: 700;
-    }
-    body.dark h2{
-        color: whitesmoke;
-    }
-    .barra{
-       display: none;
-        width: 100%;
-        background-color: rgb(0, 0, 175);
-        height: 160px;
-        text-align: center;
-        padding-top: 1em;
-    }
-    .barra img{
-        max-width: 95%;
-        height:80%;
-    }
-	.nav-pop {
-        visibility: hidden;
-    }
-	@media (max-width: 750px) {
-        .nav-fija {
-            display: none;
-        }
-        .nav-pop {
-            visibility: visible;
-            width: 100%;
-            background-color: rgba(0, 58, 159, 0.567);
-        }
-        .navs {
-            visibility: visible;
-        }
-        .barra{
-            display:block;
-        }
-    }
-  
-    .grid-1 {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
-        grid-auto-rows: 35rem;
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-        place-items: center;
-    }
-    .imagen-ipn1 img {
-        width: 470px;
-        height: 600px;
-        transition: transform .3s ease-in-out;
-    }
-    .imagen-ipn1 img:hover{
-        transform: scale(1.2);
-    }
-    .imagen-ipn2 img {
-        width: 470px;
-        height: 600px;
-        transition: transform .3s ease-in-out;
-    }
-    .imagen-ipn2 img:hover{
-        transform: scale(1.2);
-    }
-    .IDX img {
-        width: 80%;
-        height: 50%;
-        border-radius: 1em;
-    }
-    .IDX{
-        text-align: center; 
-        margin: 2.4em;
-    }
-    @media (max-width:570px){
-        .imagen-ipn1 img {
-            transform: scale(0.7);
-    }
-        .imagen-ipn2 img {
-            transform: scale(0.7);
-    }
-    }
-    @media (max-width:530px){
-        .grid-1 {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
-        grid-auto-rows: 25rem;
-    }
-    .imagen-ipn1 img {
-            transform: scale(0.6);
-    }
-        .imagen-ipn2 img {
-            transform: scale(0.6);
-    }
-    .imagen-ipn2 img:hover{
-        transform: scale(0.7);
-    }
-    .imagen-ipn1 img:hover{
-        transform: scale(0.7);
-    }
-    }
-    
-    header h1 {
-        text-align: center;
-        font-size: 4em;
-        color: aliceblue;
-        margin-top: 7%;
-        background: rgb(66, 66, 249);
-        background: linear-gradient(
-            90deg,
-            rgb(66, 66, 249) 0%,
-            rgb(5, 242, 255) 100%
-        );
-        margin: 0.5em;
-        padding: 1em;
-        border-radius: 10px;
-        font-weight: bold;
-        font-family: montserrat;
-    }
-    @media (max-width:700px){
-        header h1{
-            font-size: 3em;
-        }
-    }
-    @media (max-width:510px){
-        header h1{
-            font-size: 1.8em;
-        }
-        h2{
-            font-size: 1.2em;
-        }
-    }
-    @media (max-width:950px){
-    .IDX{
-        text-align: center; 
-        margin: 0em;
-    }
-    .titulo{
-        padding: 2em;
-        text-align: center;
-        margin-top: 3em;
-        padding-bottom: 2em;
-    }
-    }
-    @media(max-width:400px){
-        header h1{
-            font-size: 2em;
-            margin-top: 2em;
-        }
-    }
-
+  .sponsors-page { overflow: hidden; padding: 0 clamp(1.1rem,6vw,6rem) 5rem; background: radial-gradient(ellipse at 80% 0%,#e3f5ff 0,transparent 35%),#f5f8fc; }
+  .sponsors-hero { position: relative; max-width: 980px; margin: auto; padding: clamp(4rem,10vw,7rem) 0 3rem; text-align: center; }
+  .eyebrow { color: #0878c9; font-size: .72rem; font-weight: 800; letter-spacing: .19em; text-transform: uppercase; }
+  .sponsors-hero h1 { margin: .8rem 0; color: #112c4b; font-size: clamp(2.3rem,5vw,4.6rem); line-height: 1.08; letter-spacing: -.055em; }
+  .sponsors-hero p { max-width: 680px; margin: auto; color: #61758b; font-size: 1.1rem; line-height: 1.8; }
+  .hero-line { width: 62px; height: 4px; margin: 2rem auto 0; border-radius: 4px; background: linear-gradient(90deg,#06a5dc,#3157ca); }
+  .recognition-list { max-width: 1160px; margin: auto; }
+  .recognition { display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: clamp(2rem,7vw,7rem); padding: 3.2rem 0; }
+  .recognition.reverse .recognition-visual { order: 2; }.recognition.reverse .recognition-copy { order: 1; }
+  .recognition-visual { position: relative; display: grid; min-height: 300px; place-items: center; padding: 1rem; isolation: isolate; }
+  .recognition-visual img { position: relative; z-index: 1; display: block; width: 100%; max-height: 420px; object-fit: contain; border-radius: 22px; filter: drop-shadow(0 20px 28px rgba(18,48,80,.18)); transition: transform .7s cubic-bezier(.2,.8,.2,1),filter .7s; }
+  .recognition:hover .recognition-visual img { transform: translateY(-7px) scale(1.035) rotate(-1deg); filter: drop-shadow(0 28px 36px rgba(18,48,80,.24)); }
+  .image-glow { position: absolute; z-index: -1; inset: 12% 10%; border-radius: 50%; background: radial-gradient(ellipse,#aeeaff 0,rgba(174,234,255,0) 70%); filter: blur(14px); transition: transform .7s; }
+  .recognition:hover .image-glow { transform: scale(1.18); }
+  .recognition-copy { position: relative; padding: 1.5rem 0; }
+  .recognition-tag { display: inline-flex; align-items: center; gap: .55rem; color: #0878c9; font-size: .72rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+  .recognition-tag span { width: 8px; height: 8px; border-radius: 50%; background: #12b9dd; box-shadow: 0 0 0 5px rgba(18,185,221,.12); }
+  .recognition-number { position: absolute; top: 0; right: 0; color: #e1eaf4; font-size: 4rem; font-weight: 900; line-height: 1; }
+  .recognition-copy h2 { position: relative; margin: 1.1rem 0 .85rem; color: #112c4b; font-size: clamp(1.65rem,3vw,2.5rem); line-height: 1.2; letter-spacing: -.04em; }
+  .recognition-copy p { color: #61758b; font-size: 1rem; line-height: 1.85; }
+  .recognition-rule { width: 44px; height: 3px; margin: 1.5rem 0 .8rem; border-radius: 3px; background: #22b9dc; }
+  .recognition-signature { color: #8291a2; font-size: .76rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .sponsors-cta { max-width: 850px; margin: 3rem auto 0; padding: clamp(2rem,6vw,4rem); border: 1px solid #e0ebf4; border-radius: 28px; background: linear-gradient(135deg,#fff,#edf8ff); text-align: center; box-shadow: 0 20px 50px rgba(18,48,80,.07); }
+  .sponsors-cta h2 { margin: .65rem 0; color: #112c4b; font-size: clamp(1.6rem,3vw,2.35rem); }.sponsors-cta p { color: #61758b; }.sponsors-cta a { display: inline-flex; gap: .7rem; margin-top: .6rem; padding: .9rem 1.2rem; border-radius: 999px; background: #0878c9; color: white; font-size: .9rem; font-weight: 750; text-decoration: none; }
+  @media (max-width: 760px) { .recognition { grid-template-columns: 1fr; gap: .5rem; padding: 2.2rem 0; } .recognition.reverse .recognition-visual,.recognition.reverse .recognition-copy { order: initial; } .recognition-visual { min-height: 220px; } .recognition-visual img { max-height: 340px; } .recognition-copy { padding: .5rem .3rem 1rem; } }
+  @media (prefers-reduced-motion: reduce) { .recognition-visual img,.image-glow { transition: none; } }
 </style>

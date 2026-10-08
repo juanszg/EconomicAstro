@@ -1,52 +1,25 @@
-<!-- index.html --><!doctype html>
-<html>
-    <body>
-        <div class="grid">
-            <div class="img1">
-                <img src="/src/components/comp-nosotros/img/precios-best.png" />
-            </div>
-            <div class="img2">
-                <img
-                    src="/src/components/comp-nosotros/img/excelente-serv.png"
-                />
-            </div>
-            <div class="img3">
-                <img src="/src/components/comp-nosotros/img/confiable.png" />
-            </div>
-        </div>
-    </body>
-</html>
+---
+const recognitions = [
+  { image: "/media/nosotros-precios.webp", title: "Precios competitivos", text: "Tecnología accesible y propuestas ajustadas a las necesidades de cada organización." },
+  { image: "/media/nosotros-servicio.webp", title: "Servicio excepcional", text: "Acompañamiento cercano, atención personalizada y compromiso con cada entrega." },
+  { image: "/media/nosotros-confiable.webp", title: "Socio confiable", text: "Experiencia y relaciones de largo plazo para construir soluciones con confianza." },
+];
+---
+<div class="recognition-grid">
+  {recognitions.map((item) => <article class="recognition-card">
+    <div class="recognition-image"><img src={item.image} alt={item.title} loading="lazy" decoding="async" /></div>
+    <h3>{item.title}</h3><p>{item.text}</p>
+  </article>)}
+</div>
 <style>
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-        grid-auto-rows: 22rem;
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-    }
-    .img1 img {
-        width: 270px;
-        height: 270px;
-    }
-    .img2 img {
-        width: 270px;
-        height: 270px;
-    }
-    .img3 img {
-        width: 270px;
-        height: 270px;
-    }
-    .img1, .img2 , .img3{
-         transition: transform .5s;
-    }
-
-    .img1:hover {
-        transform: scale(1.4);
-    }
-    .img2:hover {
-        transform: scale(1.4);
-    }
-    .img3:hover {
-        transform: scale(1.4);
-    }
+  .recognition-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.25rem; width: 100%; margin: 2.5rem auto 0; }
+  .recognition-card { padding: 1.5rem; text-align: left; border: 1px solid #e4ebf4; border-radius: 22px; background: #fff; box-shadow: 0 14px 35px rgba(16,48,86,.07); transition: transform .35s ease,box-shadow .35s ease; }
+  .recognition-card:hover { transform: translateY(-9px); box-shadow: 0 24px 45px rgba(16,48,86,.13); }
+  .recognition-image { display: grid; place-items: center; min-height: 170px; margin-bottom: 1.2rem; overflow: hidden; border-radius: 16px; background: #fff; }
+  .recognition-image img { width: 100%; max-width: 220px; max-height: 180px; object-fit: contain; mix-blend-mode: multiply; transition: transform .55s cubic-bezier(.2,.8,.2,1); }
+  .recognition-card:hover img { transform: scale(1.08) rotate(-2deg); }
+  .recognition-card h3 { margin: 0 0 .55rem; color: #0b3970; font-size: 1.05rem; }
+  .recognition-card p { margin: 0; color: #617188; font-size: .88rem; line-height: 1.7; }
+  @media (max-width: 760px) { .recognition-grid { grid-template-columns: 1fr; max-width: 460px; } }
+  @media (prefers-reduced-motion: reduce) { .recognition-card,.recognition-image img { transition: none; } }
 </style>

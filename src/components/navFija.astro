@@ -1,108 +1,49 @@
-<!--*********** Barra navegacion fija ********************************-->
-<html lang="es">
-    <div class="logo-economic">
-        <img src="/src/components/img/GIF-3.gif" width="250" height="250" />
-        <!-- <img src="" alt="bannerlogo-ECONOMICSALES" />-->
-        <nav id="menu">
-            <a href="index.html"><span id="company-name" class="company-name">ECONOMIC SALES</span></a>
-            <ul>
-                <!-- <li><a href="index.html"> INICIO</a></li>-->
-                <li><a href="/BLOG/blog.html">BLOG</a></li>
-                <li><a href="/nosotros">NOSOTROS</a></li>
-                <li><a href="/design">DISEÑO</a></li>
-                <li><a href="/venta">VENTA DE EQUIPO</a></li>
-                <li><a href="/patrocinios">PATROCINIOS</a></li>
-                <li><a href="/contacto"> COTIZA AQUI</a></li>
-            </ul>
-        </nav>
-    </div>
-    <style>
-        * {
-            font-family: montserrat;
-        }
-        #menu {
-            padding: 10px;
-            display: flex;
-            flex-wrap: wrap;
-            color: aliceblue;
-            flex-flow: row;
-            /*margin: 10%; */
-        }
-        #menu ul li a:hover {
-            color: #2a98f9;
-        }
-        #menu ul {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: center;
-            place-items: center;
-            width: 60%;
-            height: 100%;
-            font-weight: bold;
-            list-style: none;
-            justify-content: end;
-        }
-        #menu ul li a {
-            text-decoration: none;
-            color: aliceblue;
-            margin-right: 35px;
-            font-size: 0.9em;
-            font-weight: bold;
-        }
-        .logo-economic {
-            background-color: #190eaf;
-        }
-        .logo-economic img {
-            width: 75%;
-            height: 75%;
-            margin-left: 10%;
-            margin-top: 80px;
-            padding: 2em;
-        }
-        .logo-economic nav {
-            z-index: 998;
-            position: fixed;
-            top: 0px;
-            padding-top: 0em;
-            background-color: #190eaf;
-            opacity: 0.9;
-            width: 100%;
-        }
-        .logo-economic ul {
-            margin-left: 17%;
-        }
-        .company-name {
-          display: flex;
-            opacity: 0;
-            transition: opacity 0.5s;
-            /* left: 13%;
-            top: 25px; */
-            color:whitesmoke;
-            text-align: center;
-        
-        }
-       a{
-             text-decoration: none;
-        }
-        span {
-            font-family: montserrat;
-            font-weight: 900;
-            font-size: 1.2em;
-           position: relative;
-           left: 30%;
-            
-        }
-        span a{
-             text-decoration: none;
-            
-        }
-        .scrolled .company-name {
-            opacity: 1;
-            text-decoration: none;
-        }
-    </style>
-    <script src="/src/components/efecto.js"></script>
-
-
-</html>
+---
+const links = [
+    { href: "/nosotros", label: "Nosotros" },
+    { href: "/servicios", label: "Servicios" },
+    { href: "/proyectos", label: "Proyectos" },
+    { href: "/design", label: "Diseño" },
+    { href: "/venta", label: "Venta de equipo" },
+    { href: "/patrocinios", label: "Patrocinios" },
+    { href: "/contacto", label: "Contacto" },
+];
+---
+<header class="site-header">
+    <nav class="site-nav" aria-label="Navegación principal">
+        <a class="brand" href="/" aria-label="Economic Sales, inicio">
+            <span class="brand-name">ECONOMIC SALES</span>
+        </a>
+        <div class="desktop-links">
+            {links.map((link) => <a href={link.href}>{link.label}</a>)}
+        </div>
+        <details class="mobile-menu">
+            <summary aria-label="Abrir menú de navegación"><span></span><span></span><span></span></summary>
+            <div class="mobile-links">
+                {links.map((link) => <a href={link.href}>{link.label}</a>)}
+            </div>
+        </details>
+    </nav>
+</header>
+<style>
+    .site-header { position: sticky; top: 0; z-index: 1000; width: 100%; padding: .65rem clamp(1rem, 4vw, 3.5rem); background: rgba(25, 14, 175, .97); border-bottom: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(16px); }
+    .site-nav { max-width: 1440px; min-height: 64px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; }
+    .brand { display: inline-flex; align-items: center; color: #fff; text-decoration: none; flex: 0 0 auto; }
+    .brand-name { color: #fff; font-family: 'Montserrat', sans-serif; font-size: clamp(.9rem,1.25vw,1.08rem); font-weight: 900; letter-spacing: .055em; line-height: 1.15; white-space: nowrap; }
+    .desktop-links { display: flex; align-items: center; justify-content: flex-end; gap: clamp(.5rem, 1.2vw, 1.25rem); }
+    .desktop-links a, .mobile-links a { color: #eaf3ff; text-decoration: none; font-size: .78rem; font-weight: 650; transition: color .2s ease; }
+    .desktop-links a:hover, .mobile-links a:hover { color: #48d5f4; }
+    .desktop-links a + a::before { content: "•"; display: inline-block; margin-right: clamp(.5rem,1vw,1rem); color: #58dcf5; font-size: 1.1em; line-height: 0; vertical-align: middle; }
+    .desktop-links a:last-child { padding: .7rem 1rem; border-radius: 999px; background: #0878d1; color: #fff; }
+    .mobile-menu { display: none; position: relative; }
+    .mobile-menu summary { display: flex; width: 44px; height: 44px; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 1px solid rgba(255,255,255,.22); border-radius: 12px; cursor: pointer; list-style: none; }
+    .mobile-menu summary::-webkit-details-marker { display: none; }
+    .mobile-menu summary span { width: 19px; height: 2px; border-radius: 3px; background: #fff; }
+    .mobile-links { position: absolute; top: calc(100% + .9rem); right: 0; display: grid; width: min(84vw, 340px); gap: .2rem; padding: .65rem; border: 1px solid rgba(255,255,255,.12); border-radius: 18px; background: #0b2143; box-shadow: 0 20px 50px rgba(0,0,0,.32); }
+    .mobile-links a { padding: .85rem 1rem; border-radius: 11px; font-size: .95rem; }
+    .mobile-links a::before { content: "•"; margin-right: .7rem; color: #58dcf5; }
+    .mobile-links a:hover { background: rgba(255,255,255,.08); }
+    @media (max-width: 1060px) { .desktop-links { gap: .75rem; } .desktop-links a { font-size: .7rem; } }
+    @media (max-width: 880px) { .desktop-links { display: none; } .mobile-menu { display: block; } .site-header { padding-inline: 1rem; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; } }
+</style>

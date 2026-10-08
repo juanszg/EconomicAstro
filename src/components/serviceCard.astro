@@ -1,105 +1,23 @@
 ---
-// src/components/ServiceCard.astro
-
-interface Props {
-  title: string;
-  description: string;
-  imageSrc: string;
-  imageAlt?: string;
-  href?: string;
-}
-
-// Recibimos los datos dinámicos
-const { 
-  title, 
-  description, 
-  imageSrc, 
-  imageAlt = "Icono descriptivo", 
-  href = "#" 
-} = Astro.props;
+interface Props { title: string; description: string; imageSrc: string; imageAlt?: string; href?: string; number?: string; }
+const { title, description, imageSrc, imageAlt = "", href, number } = Astro.props;
+const Tag = href ? "a" : "article";
 ---
-
-<a href={href} class="service-card">
-  <div class="card-icon">
-    <img src={imageSrc} alt={imageAlt} />
-  </div>
-  <div class="card-content">
-    <h2 class="card-title">{title}</h2>
-    <p class="card-description">{description}</p>
-  </div>
-</a>
-
+<Tag class="service-card" href={href}>
+  <div class="card-icon"><img src={imageSrc} alt={imageAlt} loading="lazy" decoding="async" /></div>
+  <div class="card-content"><span class="card-number">{number}</span><h2 class="card-title">{title}</h2><p class="card-description">{description}</p></div>
+</Tag>
 <style>
-  .service-card {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #0070B8; /* Azul basado en tu imagen */
-    border-radius: 20px;
-    padding: 24px 32px;
-    text-decoration: none;
-    color: white;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    width: 100%;
-    max-width: 850px;
-    box-sizing: border-box;
-    cursor: pointer;
-  }
-
-  /* Efecto de botón al pasar el mouse */
-  .service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  }
-
-  .card-icon {
-    flex: 0 0 130px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 32px;
-  }
-
-  .card-icon img {
-    width: 100%;
-    height: auto;
-    /* max-height: 220px; */
-    object-fit: cover;
-    transform: scale(2);
-  }
-
-  .card-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .card-title {
-    font-family: 'Arial Black', Impact, sans-serif; /* Tipografía gruesa sin patines */
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    margin: 0 0 12px 0;
-    letter-spacing: 0.5px;
-  }
-
-  .card-description {
-    font-family: 'Courier New', Courier, monospace; /* Tipografía tipo máquina de escribir */
-    font-size: 1.05rem;
-    line-height: 1.4;
-    margin: 0;
-  }
-
-  /* Diseño responsivo para móviles */
-  @media (max-width: 768px) {
-    .service-card {
-      flex-direction: column;
-      padding: 20px;
-    }
-    .card-icon {
-      margin-right: 0;
-      margin-bottom: 20px;
-    }
-  }
+  .service-card { position: relative; display: grid; grid-template-columns: 92px minmax(0,1fr); align-items: center; gap: 1.15rem; min-height: 190px; padding: 1.4rem; overflow: hidden; border: 1px solid rgba(255,255,255,.2); border-radius: 24px; background: linear-gradient(135deg,#087fc1,#0666a9); color: white; text-decoration: none; box-shadow: 0 12px 24px rgba(3,77,126,.14); transition: transform .3s ease,box-shadow .3s ease; }
+  .service-card::after { position: absolute; right: -45px; bottom: -70px; width: 180px; height: 180px; border-radius: 50%; background: rgba(89,211,243,.12); content: ""; transition: transform .4s ease; }
+  .service-card:hover { transform: translateY(-5px); box-shadow: 0 20px 34px rgba(3,77,126,.24); }
+  .service-card:hover::after { transform: scale(1.35); }
+  .card-icon { position: relative; z-index: 1; display: grid; place-items: center; width: 88px; height: 88px; border: 1px solid rgba(255,255,255,.18); border-radius: 22px; background: rgba(255,255,255,.13); }
+  .card-icon img { width: 72px; height: 72px; object-fit: contain; }
+  .card-content { position: relative; z-index: 1; }
+  .card-number { color: #a8e8f8; font-size: .65rem; font-weight: 800; letter-spacing: .18em; }
+  .card-title { margin: .4rem 0 .5rem; color: #fff; font-family: 'Montserrat',sans-serif; font-size: 1rem; font-weight: 800; line-height: 1.35; letter-spacing: .01em; }
+  .card-description { margin: 0; color: #e6f4ff; font-size: .82rem; line-height: 1.65; }
+  @media (max-width: 520px) { .service-card { grid-template-columns: 68px minmax(0,1fr); gap: .9rem; min-height: 0; padding: 1rem; border-radius: 19px; } .card-icon { width: 64px; height: 64px; border-radius: 17px; } .card-icon img { width: 54px; height: 54px; } .card-title { font-size: .91rem; } .card-description { font-size: .78rem; } }
+  @media (prefers-reduced-motion: reduce) { .service-card,.service-card::after { transition: none; } }
 </style>

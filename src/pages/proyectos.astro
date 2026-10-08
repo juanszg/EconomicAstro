@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+const projects = [
+  { number: "01", category: "Inteligencia artificial", title: "Proyectos con IA", description: "Diseñamos herramientas que automatizan tareas y convierten información en acciones útiles para tu empresa.", image: "/img-servicios/Iconos 2.png", alt: "Inteligencia artificial aplicada a proyectos", detailTitle: "API Bot para correos automatizados", detail: "Un asistente que investiga prospectos, prepara propuestas personalizadas, adjunta materiales y organiza el envío desde la cuenta de correo de tu marca." },
+  { number: "02", category: "Impacto para colaboradores", title: "Alianzas estratégicas con empresas", description: "Creamos programas que acercan tecnología y opciones de compra a las personas que hacen crecer cada organización.", image: "/img-servicios/Iconos 3.png", alt: "Alianza estratégica empresarial", detailTitle: "Campaña de equipo a precio justo", detail: "Una iniciativa para ofrecer equipo de cómputo a todos los trabajadores a precio justo, con alternativas adecuadas a sus necesidades." },
+];
+---
+<Layout title="Proyectos" description="Proyectos de Economic Sales en inteligencia artificial y alianzas estratégicas empresariales.">
+  <section class="projects-page">
+    <header class="projects-hero"><span class="eyebrow">Ideas que se convierten en soluciones</span><h1>Proyectos con impacto<br /><span>para personas y empresas.</span></h1><p>Explora iniciativas que unen automatización, tecnología y alianzas para atender necesidades concretas.</p></header>
+    <div class="project-list">{projects.map((project, index) => <article class:list={["project-card", index % 2 ? "reverse" : ""]}>
+      <div class="project-art"><span class="project-orbit orbit-one"></span><span class="project-orbit orbit-two"></span><div class="project-icon"><img src={project.image} alt={project.alt} loading="lazy" decoding="async" /></div><span class="project-index">{project.number}</span></div>
+      <div class="project-copy"><span class="project-category">{project.category}</span><h2>{project.title}</h2><p>{project.description}</p><div class="project-detail"><h3>{project.detailTitle}</h3><p>{project.detail}</p></div><a href="/contacto">Conversemos sobre tu proyecto <span aria-hidden="true">→</span></a></div>
+    </article>)}</div>
+  </section>
+</Layout>
+<style>
+  .projects-page { padding: 0 clamp(1rem,6vw,6rem) 5rem; background: radial-gradient(ellipse at 80% 0%,#e2f5ff 0,transparent 34%),#f5f8fc; }
+  .projects-hero { max-width: 960px; margin: auto; padding: clamp(4rem,10vw,7rem) 0 3rem; text-align: center; }
+  .eyebrow { color: #0878c9; font-size: .72rem; font-weight: 800; letter-spacing: .19em; text-transform: uppercase; }
+  .projects-hero h1 { margin: 1rem 0; color: #112c4b; font-size: clamp(2.25rem,5vw,4.3rem); line-height: 1.1; letter-spacing: -.055em; }.projects-hero h1 span { color: #0788ca; }
+  .projects-hero p { max-width: 700px; margin: auto; color: #61758b; font-size: 1.05rem; line-height: 1.8; }
+  .project-list { max-width: 1150px; margin: auto; }
+  .project-card { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; gap: clamp(2rem,7vw,7rem); padding: 3rem 0; }
+  .project-card.reverse .project-art { order: 2; }.project-card.reverse .project-copy { order: 1; }
+  .project-art { position: relative; display: grid; min-height: 390px; place-items: center; overflow: hidden; border: 1px solid #e1edf6; border-radius: 32px; background: linear-gradient(140deg,#edfaff,#e7edff); }
+  .project-icon { z-index: 1; display: grid; width: 170px; height: 170px; place-items: center; border: 1px solid rgba(255,255,255,.9); border-radius: 42px; background: rgba(255,255,255,.6); box-shadow: 0 25px 60px rgba(34,93,147,.15); animation: hover-art 5s ease-in-out infinite; }
+  .project-icon img { width: 125px; height: 125px; object-fit: contain; }
+  .project-orbit { position: absolute; width: 275px; height: 275px; border: 1px solid rgba(31,137,203,.2); border-radius: 50%; }.orbit-two { width: 360px; height: 360px; border-color: rgba(31,137,203,.12); }
+  .project-index { position: absolute; right: 1.5rem; bottom: 1rem; color: rgba(9,85,143,.18); font-size: 5rem; font-weight: 900; }
+  .project-category { color: #0878c9; font-size: .7rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+  .project-copy h2 { margin: .7rem 0; color: #112c4b; font-size: clamp(1.7rem,3vw,2.6rem); line-height: 1.2; letter-spacing: -.04em; }
+  .project-copy > p,.project-detail p { color: #61758b; font-size: .98rem; line-height: 1.8; }
+  .project-detail { margin: 1.5rem 0; padding: 1rem 1.2rem; border-left: 3px solid #18b7dc; border-radius: 0 14px 14px 0; background: #fff; }.project-detail h3 { margin: 0; color: #173d67; font-size: .95rem; }.project-detail p { margin: .45rem 0 0; font-size: .88rem; }
+  .project-copy > a { display: inline-flex; gap: .65rem; color: #0878c9; font-size: .9rem; font-weight: 800; text-decoration: none; }
+  @keyframes hover-art { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-12px) rotate(2deg); } }
+  @media (max-width: 760px) { .project-card { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 0; }.project-card.reverse .project-art,.project-card.reverse .project-copy { order: initial; }.project-art { min-height: 270px; }.project-icon { width: 130px; height: 130px; border-radius: 32px; }.project-icon img { width: 98px; height: 98px; } }
+  @media (prefers-reduced-motion: reduce) { .project-icon { animation: none; } }
+</style>

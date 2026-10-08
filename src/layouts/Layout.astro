@@ -1,128 +1,38 @@
 ---
 import NavFija from "../components/navFija.astro";
-import NavPop from "../components/navPop.astro";
 import Footer from "../components/Footer.astro";
-import Dropdown from "../components/Dropdown.astro";
 import Whats from "../components/whats.astro";
 
-interface Props {
-    title: string;
-}
-
-const { title } = Astro.props;
+interface Props { title: string; description?: string; }
+const { title, description = "Soluciones de tecnología, equipo de cómputo y servicios para empresas en México." } = Astro.props;
 ---
-
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="Astro description" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content={Astro.generator} />
-        
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" href="/iconominibueno.ico" />
-        <link rel="stylesheet" href="/estilos.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-        <link rel="stylesheet" href="/bootstrap/bootstrap2/css/bootstrap.min.css" />
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        
-        <title>{title}</title>
-    </head>
-    <body>
-        <header>
-            <div class="nav-fija">
-                <NavFija />
-            </div>
-            <div class="nav-pop">
-                <Dropdown />
-            </div>
-            <!-- <NavPop /> -->
-        </header>
-
-        <main>
-            <slot />
-        </main>
-
-        <footer>
-            <Whats />
-            <Footer />
-        </footer>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#091a36" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <title>{title} | Economic Sales</title>
+  </head>
+  <body>
+    <NavFija />
+    <main><slot /></main>
+    <Whats />
+    <Footer />
+  </body>
 </html>
-
 <style is:global>
-    :root {
-        --accent: 136, 58, 234;
-        --accent-light: 224, 204, 250;
-        --accent-dark: 49, 10, 101;
-        --accent-gradient: linear-gradient(
-            45deg,
-            rgb(var(--accent)),
-            rgb(var(--accent-light)) 30%,
-            white 60%
-        );
-    }
-
-    html {
-        font-family: 'Montserrat', sans-serif;
-        /* background: #0093dd; */
-		border: 10px solid pink ;
-		
-    }
-
-    code {
-        font-family: 'Montserrat', monospace;
-    }
-
-    .nav-pop {
-        visibility: hidden;
-    }
-
-    /* @media (max-width: 1125px) {
-        .nav-fija {
-            display: none;
-        }
-        .nav-pop {
-            visibility: visible;
-            width: 100%;
-            background-color: rgba(0, 58, 159, 0.567);
-        }
-        .navs {
-            visibility: visible;
-        }
-        .barra {
-            display: block;
-        }
-    } */
-
-	@media (max-width: 1125px) {
-      /* 1. Hacemos que el contenedor principal del menú se quede pegado arriba */
-      header {
-          position: sticky;
-          top: 0;
-          z-index: 9999; /* Asegura que el menú pase por encima del resto del contenido */
-      }
-
-      .nav-fija {
-          display: none;
-      }
-      
-      .nav-pop {
-          visibility: visible;
-          width: 100%;
-          background-color: rgba(0, 58, 159, 0.567);
-      }
-      
-      .navs {
-          visibility: visible;
-      }
-      
-      .barra {
-          display: block;
-      }
-  }
+  :root { font-family: 'Montserrat', sans-serif; color: #13233a; background: #f5f8fc; font-synthesis: none; text-rendering: optimizeLegibility; }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { min-width: 320px; scroll-behavior: smooth; }
+  body { margin: 0; min-width: 320px; font-family: 'Montserrat', sans-serif; }
+  main { min-height: 60vh; }
+  img { max-width: 100%; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }
 </style>

@@ -1,208 +1,35 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import NavFija from "../components/navFija.astro";
-import Titulo from "../components/hola.astro";
-import NavPop from "../components/navPop.astro";
-import Slider from "../components/slider.astro";
-import Footer from "../components/Footer.astro";
-import Carrusel from "../components/Carrusel.astro";
-import Dropdown from "../components/Dropdown.astro";
-import DarkMode from "../components/BotonDark.astro";
-import Whats from "../components/whats.astro";
 import ServiceCard from "../components/serviceCard.astro";
+const services = [
+  { title: "Venta de equipo de cómputo", description: "Equipos de escritorio, laptops, periféricos y accesorios configurados para las necesidades de tu empresa.", icon: "Iconos.png", alt: "Computadora y equipo tecnológico" },
+  { title: "Bot API de correos automatizados con IA", description: "Automatiza la investigación de prospectos, la redacción de mensajes y el envío de campañas desde tu marca.", icon: "Iconos 2.png", alt: "Inteligencia artificial y automatización" },
+  { title: "Alianzas empresariales", description: "Programas de adquisición de tecnología para colaboradores con opciones y precios preferenciales.", icon: "Iconos 3.png", alt: "Alianza empresarial" },
+  { title: "Colaboración y videoconferencias", description: "Diseño y configuración de salas, plataformas de reuniones y equipos para conectar a tus equipos.", icon: "Iconos 4.png", alt: "Videoconferencia empresarial" },
+  { title: "Servidores y centros de datos", description: "Infraestructura, respaldo, virtualización y migración de datos para mantener tu operación disponible.", icon: "Iconos 5.png", alt: "Servidor y centro de datos" },
+  { title: "Psicología organizacional", description: "Consultoría para fortalecer el clima laboral, facilitar acuerdos y mejorar la productividad.", icon: "Iconos 6.png", alt: "Personas y organización" },
+  { title: "Redes y conectividad", description: "Instalación, configuración y monitoreo de redes, VPN y conectividad para tus espacios de trabajo.", icon: "Iconos 16.png", alt: "Conectividad de red" },
+  { title: "Soluciones en la nube", description: "Migración y configuración de servicios cloud, nube privada y recuperación ante contingencias.", icon: "Iconos 8.png", alt: "Servicios en la nube" },
+  { title: "Seguridad física", description: "Cámaras, control de acceso y monitoreo perimetral para proteger instalaciones y activos.", icon: "Iconos 9.png", alt: "Cámara de seguridad" },
+  { title: "Ciberseguridad", description: "Protección de endpoints, gestión de firewall y herramientas para reducir riesgos digitales.", icon: "Iconos 10.png", alt: "Escudo de ciberseguridad" },
+  { title: "Captura de datos y puntos de venta", description: "Implementación y soporte de terminales, lectores y soluciones para agilizar tus operaciones.", icon: "Iconos 11.png", alt: "Terminal de punto de venta" },
+  { title: "Tecnología, soporte y soluciones a medida", description: "Software, diseño web, reparación, instalación, arrendamiento y financiamiento de equipos.", icon: "Iconos 12.png", alt: "Soluciones de tecnología" },
+];
 ---
-
-
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Mis Servicios</title>
-  </head>
-
-     <Layout title="Servicios">
-    <div class="nav-fija">
-            <NavFija />
-        </div>
-        <div class="nav-pop">
-            <!-- <NavPop /> -->
-            <Dropdown />
-        </div>
-        	<Whats/>
-  <body>
-    <main class="cards-container">
-      
-    
-      <ServiceCard 
-        title="VENTA DE EQUIPO DE CÓMPUTO" 
-        description="Armado de fábrica o con especificaciones a la medida, HP, ASUS, Lenovo, Epson, BENQ, Apple, Dell, Sony, Samsung, Canon, Acer, Microsoft, Logitech, Razer, Xzeal, Brother, lo que sea, lo tenemos." 
-        imageSrc="/public/img-servicios/Iconos.png" 
-        href="/venta-equipo" 
-      />
-
-      <ServiceCard 
-        title="BOT API CORREOS AUTOMATIZADOS, CON IA" 
-        description="Servicio de envío de 1000 correos de tu marca diariamente a clientes potenciales, el bot investiga al cliente, redacta una propuesta, adjunta documentos y los envía desde tu dirección de correo, todo completamente automatizado." 
-        imageSrc="/public/img-servicios/Iconos 2.png" 
-        href="/bot-correos" 
-      />
-
-      <ServiceCard 
-        title="ALIANZAS EMPRESARIALES" 
-        description="Vende a tus empleados equipos de cómputo deducibles de impuestos que se descuenten de su pago en nómina. Desde smartphones hasta equipos gamer, haz feliz a tus empleados ayudándoles a conseguir lo que siempre quisieron, pagando menos, tú y ellos." 
-        imageSrc="/public/img-servicios/Iconos 3.png" 
-        href="/alianzas" 
-      />
-
-        <ServiceCard 
-        title="SERVICIOS DE COLABORACIÓN Y CONFERENCIAS" 
-        description="Configuración de video-colaboración en Microsoft, CISCO, POLY, Logitech, Jabra, Lenovo, aplicaciones de conferencia web, salas." 
-        imageSrc="/public/img-servicios/Iconos 4.png" 
-        href="/alianzas" 
-      />
-
-        <ServiceCard 
-        title="INSTALACIÓN DE SERVIDORES DE DATACENTER" 
-        description="Sistemas de respaldo, sistemas hiperconvergentes, escritorios virtuales, migración de datos, CISCO, CITRIX, VEEAM, etc." 
-        imageSrc="/public/img-servicios/Iconos 5.png" 
-        href="/alianzas" 
-      />
-
-        <ServiceCard 
-        title="PSICOLOGÍA ORGANIZACIONAL" 
-        description="Consultoría, mediaciones, optimización de proyectos, análisis de clima organizacional y soluciones de productividad para su empresa." 
-        imageSrc="/public/img-servicios/Iconos 6.png" 
-        href="/alianzas" 
-      />
-
-        <ServiceCard 
-        title="INSTALACIÓN Y CONFIGURACIÓN DE EQUIPOS DE RED" 
-        description="Redes de conectividad, CISCO, ARUBA, TP-LINK, Linksys, Juniper, creación de VPN´S y gateways, monitoreo de red, configuración remota." 
-        imageSrc="/public/img-servicios/Iconos 7.png" 
-        href="/alianzas" 
-      />
-
-        <ServiceCard 
-        title="IMPLEMENTACIÓN Y CONFIGURACIÓN DE EQUIPOS CLOUD" 
-        description="Soluciones en la nube, Microsoft Amure, CISCO, Adobe, Amazon Web Services, Nube Privada, migración de máquinas virtuales, site recovery." 
-        imageSrc="/public/img-servicios/Iconos 8.png" 
-        href="/alianzas" 
-      />
-              <ServiceCard 
-        title="INSTALACIÓN DE VIGILANCIA PERIMETRAL DE SEGURIDAD FÍSICA" 
-        description="Seguridad física en redes CISCO, AXIS, ZKTECO, implementación de cámaras, controles de acceso, circuito cerrado, analíticas de cámaras." 
-        imageSrc="/public/img-servicios/Iconos 9.png" 
-        href="/alianzas" 
-      />
-                  <ServiceCard 
-        title="INSTALACIÓN DE VIGILANCIA PERIMETRAL DE CÍBER SEGURIDAD" 
-        description="Implementación de cíber vigilancia en redes CISCO, ESET, Microsoft, etc. Consolas de gestión central firewall, seguridad end-point." 
-        imageSrc="/public/img-servicios/Iconos 10.png" 
-        href="/alianzas" 
-      />
-                        <ServiceCard 
-        title="INSTALACIÓN DE CAPTURA DE DATOS Y PUNTOS DE VENTA" 
-        description="Implementación, mantenimiento preventivo y correctivo, creación de aplicativos móviles, consultoría. ELO, Datalogic, HP, etc." 
-        imageSrc="/public/img-servicios/Iconos 11.png" 
-        href="/alianzas" 
-      />
-                            <ServiceCard 
-        title="TECNOLOGÍA ESPECIAL (IA, API´S, CRM, SOFTWARE A LA MEDIDA, ETC.)" 
-        description="Fábrica de software, gobernanza de datos, analítica de datos y Power BI, test de rendimiento y calidad, destrucción de equipos." 
-        imageSrc="/public/img-servicios/Iconos 12.png" 
-        href="/alianzas" 
-      />
-                            <ServiceCard 
-        title="REPARACIÓN E INSTALACIÓN DE EQUIPO DE CÓMPUTO" 
-        description="Ayuda con garantías en equipos nuevos, reparación, escalado de RAM Y ROM en equipos antiguos, instalación de equipos" 
-        imageSrc="/public/img-servicios/Iconos 13.png" 
-        href="/alianzas" 
-      />
-                            <ServiceCard 
-        title="DISEÑO, DISEÑO WEB Y BRANDING INSTITUCIONAL" 
-        description="Creación y diseño de mercadotecnia, mejorar o rehacer su imagen corporativa, logo, estilo, branding, página web, versión celular." 
-        imageSrc="/public/img-servicios/Iconos 14.png" 
-        href="/alianzas" 
-      />
-                             <ServiceCard 
-        title="ARRENDAMIENTO Y FINANCIAMENTO DE EQUIPOS DE CÓMPUTO" 
-        description="Opciones de financiamiento, se requiere acta constitutiva (mínimo 4 años de constitución), identificaciones, constancias vigentes, etc." 
-        imageSrc="/public/img-servicios/Iconos 15.png" 
-        href="/alianzas" 
-      />
-
-
-
-
-
-    </main>
-    <Footer></Footer>
-  </body>
-  </Layout>
-</html>
-
+<Layout title="Servicios" description="Conoce los servicios de Economic Sales: equipo, nube, redes, ciberseguridad, IA y soluciones para empresas.">
+  <section class="services-page">
+    <header class="services-hero"><span class="eyebrow">Soluciones para tu empresa</span><h1>Servicios que conectan<br /><span>tecnología con resultados.</span></h1><p>Desde el equipo que tu operación necesita hasta soluciones especializadas para crecer con seguridad.</p></header>
+    <div class="services-grid">{services.map((service, index) => <ServiceCard title={service.title} description={service.description} imageSrc={`/img-servicios/${service.icon}`} imageAlt={service.alt} number={String(index + 1).padStart(2, "0")} />)}</div>
+    <aside class="services-contact"><p>¿Buscas una solución distinta?</p><a href="/contacto">Cuéntanos qué necesitas <span aria-hidden="true">→</span></a></aside>
+  </section>
+</Layout>
 <style>
-
-  .cards-container {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    align-items: center;
-    padding: 40px 20px;
-    background-color: #FAF5F0; /* Fondo beige claro similar a tu imagen de referencia */
-    min-height: 100vh;
-    border: 15px solid lightskyblue;
-  }
-    .nav-pop {
-        visibility: hidden;
-    }
-    @media (max-width: 750px) {
-        .nav-fija {
-            display: none;
-        }
-        .nav-pop {
-            visibility: visible;
-            width: 100%;
-            background-color: rgba(0, 58, 159, 0.567);
-        }
-        .navs {
-            visibility: visible;
-        }
-        .barra{
-            display:block;
-        }
-    }
-    @media (max-width: 580px) {
-        header h1 {
-            font-size: 2.5em;
-        }
-        .texto-1 {
-            font-size: 1.2em;
-        }
-        .texto-2 {
-            font-size: 1.2em;
-        }
-    }
-    @media (max-width: 400px) {
-        header h1 {
-            font-size: 2em;
-            margin-top: 2em;
-        }
-    }
-       .navs {
-        visibility: none;
-        background-color: darkblue;
-    }
-    .barra{
-       display: none;
-        width: 100%;
-        background-color: rgb(0, 0, 175);
-        height: 160px;
-        text-align: center;
-        padding-top: 1em;
-    }
-    .barra img{
-        max-width: 95%;
-        height:80%;
-    }
+  .services-page { padding: 0 clamp(1rem,5vw,5rem) 5rem; background: radial-gradient(ellipse at 12% 0%,#e2f5ff 0,transparent 35%),#f5f8fc; }
+  .services-hero { max-width: 920px; margin: auto; padding: clamp(4rem,9vw,7rem) 0 3.2rem; text-align: center; }
+  .eyebrow { color: #0878c9; font-size: .72rem; font-weight: 800; letter-spacing: .19em; text-transform: uppercase; }
+  .services-hero h1 { margin: 1rem 0; color: #112c4b; font-size: clamp(2.25rem,5vw,4.2rem); line-height: 1.1; letter-spacing: -.055em; }.services-hero h1 span { color: #0788ca; }
+  .services-hero p { max-width: 680px; margin: auto; color: #61758b; font-size: 1.05rem; line-height: 1.8; }
+  .services-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.1rem; max-width: 1200px; margin: auto; }
+  .services-contact { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .6rem 1rem; margin: 2.5rem auto 0; color: #5e7188; text-align: center; }.services-contact p { margin: 0; }.services-contact a { color: #0878c9; font-weight: 800; text-decoration: none; }
+  @media (max-width: 780px) { .services-grid { grid-template-columns: 1fr; max-width: 650px; } }
 </style>
