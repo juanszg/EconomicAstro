@@ -12,6 +12,7 @@ const links = [
 <header class="site-header">
     <nav class="site-nav" aria-label="Navegación principal">
         <a class="brand" href="/" aria-label="Economic Sales, inicio">
+            <img class="brand-mark" src="/media/economic-sales-mark.webp" alt="" width="40" height="40" />
             <span class="brand-name">ECONOMIC SALES</span>
         </a>
         <div class="desktop-links">
@@ -26,9 +27,10 @@ const links = [
     </nav>
 </header>
 <style>
-    .site-header { position: sticky; top: 0; z-index: 1000; width: 100%; padding: .65rem clamp(1rem, 4vw, 3.5rem); background: rgba(25, 14, 175, .97); border-bottom: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(16px); }
+    .site-header { position: sticky; top: 0; z-index: 1000; width: 100%; padding: .65rem clamp(1rem, 4vw, 3.5rem); background: #294879; border-bottom: 1px solid rgba(255,255,255,.18); backdrop-filter: blur(16px); }
     .site-nav { max-width: 1440px; min-height: 64px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; }
-    .brand { display: inline-flex; align-items: center; color: #fff; text-decoration: none; flex: 0 0 auto; }
+    .brand { display: inline-flex; align-items: center; gap: .65rem; color: #fff; text-decoration: none; flex: 0 0 auto; }
+    .brand-mark { display: block; flex: 0 0 40px; width: 40px; height: 40px; object-fit: contain; }
     .brand-name { color: #fff; font-family: 'Montserrat', sans-serif; font-size: clamp(.9rem,1.25vw,1.08rem); font-weight: 900; letter-spacing: .055em; line-height: 1.15; white-space: nowrap; }
     .desktop-links { display: flex; align-items: center; justify-content: flex-end; gap: clamp(.5rem, 1.2vw, 1.25rem); }
     .desktop-links a, .mobile-links a { color: #eaf3ff; text-decoration: none; font-size: .78rem; font-weight: 650; transition: color .2s ease; }
