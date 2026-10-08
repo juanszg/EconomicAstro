@@ -1,35 +1,168 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ServiceCard from "../components/serviceCard.astro";
+import { whatsappPhoneNumber } from "../data/contact";
+
 const services = [
-  { title: "Venta de equipo de cómputo", description: "Equipos de escritorio, laptops, periféricos y accesorios configurados para las necesidades de tu empresa.", icon: "Iconos.png", alt: "Computadora y equipo tecnológico" },
-  { title: "Bot API de correos automatizados con IA", description: "Automatiza la investigación de prospectos, la redacción de mensajes y el envío de campañas desde tu marca.", icon: "Iconos 2.png", alt: "Inteligencia artificial y automatización" },
-  { title: "Alianzas empresariales", description: "Programas de adquisición de tecnología para colaboradores con opciones y precios preferenciales.", icon: "Iconos 3.png", alt: "Alianza empresarial" },
-  { title: "Colaboración y videoconferencias", description: "Diseño y configuración de salas, plataformas de reuniones y equipos para conectar a tus equipos.", icon: "Iconos 4.png", alt: "Videoconferencia empresarial" },
-  { title: "Servidores y centros de datos", description: "Infraestructura, respaldo, virtualización y migración de datos para mantener tu operación disponible.", icon: "Iconos 5.png", alt: "Servidor y centro de datos" },
-  { title: "Psicología organizacional", description: "Consultoría para fortalecer el clima laboral, facilitar acuerdos y mejorar la productividad.", icon: "Iconos 6.png", alt: "Personas y organización" },
-  { title: "Redes y conectividad", description: "Instalación, configuración y monitoreo de redes, VPN y conectividad para tus espacios de trabajo.", icon: "Iconos 16.png", alt: "Conectividad de red" },
-  { title: "Soluciones en la nube", description: "Migración y configuración de servicios cloud, nube privada y recuperación ante contingencias.", icon: "Iconos 8.png", alt: "Servicios en la nube" },
-  { title: "Seguridad física", description: "Cámaras, control de acceso y monitoreo perimetral para proteger instalaciones y activos.", icon: "Iconos 9.png", alt: "Cámara de seguridad" },
-  { title: "Ciberseguridad", description: "Protección de endpoints, gestión de firewall y herramientas para reducir riesgos digitales.", icon: "Iconos 10.png", alt: "Escudo de ciberseguridad" },
-  { title: "Captura de datos y puntos de venta", description: "Implementación y soporte de terminales, lectores y soluciones para agilizar tus operaciones.", icon: "Iconos 11.png", alt: "Terminal de punto de venta" },
-  { title: "Tecnología, soporte y soluciones a medida", description: "Software, diseño web, reparación, instalación, arrendamiento y financiamiento de equipos.", icon: "Iconos 12.png", alt: "Soluciones de tecnología" },
+  { id: "equipment", title: "Venta de equipo de cómputo", description: "Equipos de escritorio, laptops, periféricos y accesorios configurados para las necesidades de tu empresa.", detail: "Te ayudamos a definir modelos, cantidades, marcas, accesorios y opciones de compra para equipar a tu equipo.", icon: "Iconos.png", alt: "Computadora y equipo tecnológico" },
+  { id: "ai-email", title: "Bot API de correos automatizados con IA", description: "Automatiza la investigación de prospectos, la redacción de mensajes y el envío de campañas desde tu marca.", detail: "Revisamos el proceso, el volumen de contactos, las integraciones y el nivel de automatización que necesita tu campaña.", icon: "Iconos 2.png", alt: "Inteligencia artificial y automatización" },
+  { id: "alliance", title: "Alianzas empresariales", description: "Programas de adquisición de tecnología para colaboradores con opciones y precios preferenciales.", detail: "Diseñamos campañas para acercar equipos a los trabajadores, con alternativas de pago y coordinación con la empresa.", icon: "Iconos 3.png", alt: "Alianza empresarial" },
+  { id: "collab", title: "Colaboración y videoconferencias", description: "Diseño y configuración de salas, plataformas de reuniones y equipos para conectar a tus equipos.", detail: "Podemos integrar pantallas, cámaras, micrófonos, bocinas y plataformas de colaboración según el tamaño de tus salas.", icon: "Iconos 4.png", alt: "Videoconferencia empresarial" },
+  { id: "servers", title: "Servidores y centros de datos", description: "Infraestructura, respaldo, virtualización y migración de datos para mantener tu operación disponible.", detail: "Evaluamos capacidad, almacenamiento, respaldos, virtualización, continuidad y necesidades de crecimiento.", icon: "Iconos 5.png", alt: "Servidor y centro de datos" },
+  { id: "psychology", title: "Psicología organizacional", description: "Consultoría para fortalecer el clima laboral, facilitar acuerdos y mejorar la productividad.", detail: "El alcance se adapta al tamaño de tu organización y puede incluir diagnóstico, talleres y acompañamiento.", icon: "Iconos 6.png", alt: "Personas y organización" },
+  { id: "network", title: "Redes y conectividad", description: "Instalación, configuración y monitoreo de redes, VPN y conectividad para tus espacios de trabajo.", detail: "Revisamos cobertura, cableado, Wi-Fi, VPN, seguridad y cantidad de ubicaciones para proponer una solución.", icon: "Iconos 16.png", alt: "Conectividad de red" },
+  { id: "cloud", title: "Soluciones en la nube", description: "Migración y configuración de servicios cloud, nube privada y recuperación ante contingencias.", detail: "Te asesoramos en migraciones, respaldo, almacenamiento, nube privada y continuidad de tus servicios.", icon: "Iconos 8.png", alt: "Servicios en la nube" },
+  { id: "security", title: "Seguridad física", description: "Cámaras, control de acceso y monitoreo perimetral para proteger instalaciones y activos.", detail: "Definimos cámaras, puntos de acceso, almacenamiento de video y cobertura de acuerdo con tus instalaciones.", icon: "Iconos 9.png", alt: "Cámara de seguridad" },
+  { id: "cybersecurity", title: "Ciberseguridad", description: "Protección de endpoints, gestión de firewall y herramientas para reducir riesgos digitales.", detail: "Podemos revisar dispositivos, usuarios, redes, controles existentes y prioridades para dimensionar la protección.", icon: "Iconos 10.png", alt: "Escudo de ciberseguridad" },
+  { id: "pos", title: "Captura de datos y puntos de venta", description: "Implementación y soporte de terminales, lectores y soluciones para agilizar tus operaciones.", detail: "Cotizamos terminales, lectores, impresoras y periféricos según el flujo de atención y los puntos de venta.", icon: "Iconos 11.png", alt: "Terminal de punto de venta" },
+  { id: "custom", title: "Tecnología, soporte y soluciones a medida", description: "Software, diseño web, reparación, instalación, arrendamiento y financiamiento de equipos.", detail: "Cuéntanos el reto y armamos un alcance a la medida con alternativas de implementación y soporte.", icon: "Iconos 12.png", alt: "Soluciones de tecnología" },
+];
+
+const questions = [
+  { id: "objective", icon: "🎯", label: "¿Qué necesitas resolver principalmente?", multiple: false, options: ["Cotizar equipo o un servicio", "Diseñar o implementar un proyecto", "Resolver una duda técnica", "Renovar o ampliar lo que ya tengo", "Estoy explorando opciones"] },
+  { id: "stage", icon: "🧭", label: "¿En qué etapa está tu solicitud?", multiple: false, options: ["Solo estoy investigando", "Estoy definiendo requisitos", "Quiero recibir una cotización", "El proyecto ya está en marcha"] },
+  { id: "organization", icon: "🏢", label: "¿Qué tipo de organización solicita el servicio?", multiple: false, options: ["Empresa privada", "Institución educativa", "Dependencia o institución pública", "Profesional independiente", "Otra organización"] },
+  { id: "team-size", icon: "👥", label: "¿A cuántas personas o equipos dará servicio?", multiple: false, options: ["1 a 10", "11 a 50", "51 a 200", "Más de 200", "Aún no lo sé"] },
+  { id: "current-tech", icon: "🧩", label: "¿Qué tecnología o infraestructura tienes hoy?", multiple: true, options: ["Computadoras y periféricos", "Redes o Wi-Fi", "Servidores o centro de datos", "Servicios en la nube", "Sistemas de seguridad", "Ninguna / aún por definir"] },
+  { id: "scope", icon: "🛠️", label: "¿Qué parte del trabajo te gustaría cotizar?", multiple: true, options: ["Asesoría y diagnóstico", "Suministro de equipos", "Instalación y configuración", "Migración o integración", "Soporte y mantenimiento", "Desarrollo o automatización", "No estoy seguro"] },
+  { id: "integrations", icon: "🔗", label: "¿Con qué herramientas o sistemas debe integrarse?", multiple: true, options: ["Correo electrónico", "Microsoft 365", "Google Workspace", "Sistema administrativo o ERP", "Punto de venta", "Otro sistema", "No aplica / por definir"] },
+  { id: "priorities", icon: "✨", label: "¿Qué es más importante para elegir la solución?", multiple: true, options: ["Precio y costo total", "Rapidez de implementación", "Seguridad y confiabilidad", "Facilidad de uso", "Garantía y soporte", "Posibilidad de crecer después"] },
+  { id: "urgency", icon: "⚡", label: "¿Qué tan pronto necesitas una respuesta o solución?", multiple: false, options: ["Lo antes posible", "Dentro de las próximas 2 semanas", "Durante el próximo mes", "En 1 a 3 meses", "Solo estoy planeando"] },
+  { id: "start-date", icon: "📅", label: "¿Cuándo te gustaría iniciar?", multiple: false, options: ["En cuanto se apruebe", "En las próximas 2 semanas", "En 1 a 2 meses", "Más adelante", "Por definir"] },
+  { id: "budget", icon: "💰", label: "¿Tienes un presupuesto aproximado?", multiple: false, options: ["Menos de $25,000 MXN", "$25,000 a $100,000 MXN", "$100,000 a $500,000 MXN", "Más de $500,000 MXN", "Prefiero revisarlo con asesoría"] },
+  { id: "purchase", icon: "🤝", label: "¿Qué modalidad te interesa?", multiple: true, options: ["Compra directa", "Arrendamiento", "Financiamiento", "Precios especiales para colaboradores", "Quiero comparar opciones", "Aún no lo sé"] },
 ];
 ---
 <Layout title="Servicios" description="Conoce los servicios de Economic Sales: equipo, nube, redes, ciberseguridad, IA y soluciones para empresas.">
   <section class="services-page">
     <header class="services-hero"><span class="eyebrow">Soluciones para tu empresa</span><h1>Servicios que conectan<br /><span>tecnología con resultados.</span></h1><p>Desde el equipo que tu operación necesita hasta soluciones especializadas para crecer con seguridad.</p></header>
-    <div class="services-grid">{services.map((service, index) => <ServiceCard title={service.title} description={service.description} imageSrc={`/img-servicios/${service.icon}`} imageAlt={service.alt} number={String(index + 1).padStart(2, "0")} />)}</div>
-    <aside class="services-contact"><p>¿Buscas una solución distinta?</p><a href="/contacto">Cuéntanos qué necesitas <span aria-hidden="true">→</span></a></aside>
+
+    <div class="services-grid">{services.map((service, index) => <ServiceCard serviceId={service.id} title={service.title} description={service.description} detail={service.detail} imageSrc={`/img-servicios/${service.icon}`} imageAlt={service.alt} number={String(index + 1).padStart(2, "0")} />)}</div>
+
+    <aside class="services-contact"><p>¿Buscas una solución distinta?</p><a href="#cotizador">Cuéntanos qué necesitas <span aria-hidden="true">→</span></a></aside>
+
+    <section class="quote-section" id="cotizador" aria-labelledby="quote-title">
+      <div class="quote-heading"><span class="eyebrow">Cuéntanos un poco más</span><h2 id="quote-title">Armemos una propuesta<br /><span>a la medida de tu proyecto.</span></h2><p>Responde estas 13 preguntas rápidas. Tus respuestas abrirán un mensaje listo para revisar y enviar por WhatsApp.</p><div class="quote-meta"><span>◉ 13 preguntas</span><span>◷ 3–5 minutos</span><span>↗ Tú confirmas el envío</span></div></div>
+
+      <form id="services-quote-form" class="quote-form" novalidate>
+        <div class="lead-fields">
+          <label>Tu nombre <span>(opcional)</span><input name="contact-name" type="text" autocomplete="name" placeholder="¿Cómo te llamas?" /></label>
+          <label>Empresa <span>(opcional)</span><input name="company" type="text" autocomplete="organization" placeholder="Nombre de tu organización" /></label>
+        </div>
+        <fieldset class="question-card service-question" data-question="¿Qué servicios te interesan?" data-required="true">
+          <legend><span class="question-icon" aria-hidden="true">💡</span><span><strong>01. ¿Qué servicios te interesan?</strong><small>Puedes seleccionar más de uno.</small></span></legend>
+          <div class="answer-options answer-grid">{services.map((service) => <label class="answer-option"><input type="checkbox" name="services" value={service.id} /><span>{service.title}</span></label>)}</div>
+          <p class="field-error" aria-live="polite">Selecciona al menos un servicio para continuar.</p>
+        </fieldset>
+        {questions.map((question, index) => (
+          <fieldset class="question-card" data-question={question.label} data-required={question.multiple ? "true" : undefined}>
+            <legend><span class="question-icon" aria-hidden="true">{question.icon}</span><span><strong>{String(index + 2).padStart(2, "0")}. {question.label}</strong><small>{question.multiple ? "Puedes seleccionar varias opciones." : "Elige una opción."}</small></span></legend>
+            <div class="answer-options">{question.options.map((option, choiceIndex) => <label class="answer-option"><input type={question.multiple ? "checkbox" : "radio"} name={question.id} value={option} required={!question.multiple && choiceIndex === 0} /><span>{option}</span></label>)}</div>
+            {question.multiple && <p class="field-error" aria-live="polite">Selecciona al menos una opción para continuar.</p>}
+          </fieldset>
+        ))}
+        <p class="quote-privacy">Tus respuestas se incluirán en un mensaje de WhatsApp para que nuestro equipo pueda orientarte. No se envían hasta que confirmes desde WhatsApp.</p>
+        <button class="quote-submit" type="submit"><span aria-hidden="true">◉</span> Preparar mensaje de WhatsApp</button>
+        <p class="form-status" id="quote-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
   </section>
 </Layout>
+
+<script is:inline define:vars={{ whatsappPhoneNumber }}>
+  const quoteForm = document.getElementById('services-quote-form');
+  const quoteStatus = document.getElementById('quote-status');
+
+  document.querySelectorAll('[data-pick-service]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const selectedService = button.getAttribute('data-pick-service');
+      const serviceInput = Array.from(quoteForm.querySelectorAll('input[name="services"]')).find((input) => input.value === selectedService);
+      if (!serviceInput) return;
+      serviceInput.checked = true;
+      button.setAttribute('aria-pressed', 'true');
+      button.textContent = 'Agregado a mi cotización ✓';
+      const fieldset = serviceInput.closest('fieldset');
+      fieldset?.classList.remove('has-error');
+      quoteStatus.textContent = 'Servicio agregado. Puedes completar el cuestionario al final de la página.';
+    });
+  });
+
+  quoteForm?.addEventListener('change', (event) => {
+    const fieldset = event.target.closest('fieldset[data-required="true"]');
+    if (fieldset && fieldset.querySelector('input:checked')) fieldset.classList.remove('has-error');
+  });
+
+  quoteForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const requiredGroups = Array.from(quoteForm.querySelectorAll('fieldset[data-required="true"]'));
+    const missingGroup = requiredGroups.find((fieldset) => !fieldset.querySelector('input:checked'));
+    requiredGroups.forEach((fieldset) => fieldset.classList.toggle('has-error', !fieldset.querySelector('input:checked')));
+    if (missingGroup) {
+      quoteStatus.textContent = 'Revisa las preguntas marcadas y elige al menos una opción en cada una.';
+      missingGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      missingGroup.querySelector('input')?.focus({ preventScroll: true });
+      return;
+    }
+
+    const message = ['Hola Economic Sales. Quiero recibir orientación o una cotización.'];
+    const contactName = quoteForm.elements.namedItem('contact-name').value.trim();
+    const companyName = quoteForm.elements.namedItem('company').value.trim();
+    if (contactName) message.push(`Nombre: ${contactName}`);
+    if (companyName) message.push(`Empresa: ${companyName}`);
+    message.push('', 'Mis respuestas:');
+    quoteForm.querySelectorAll('fieldset[data-question]').forEach((fieldset) => {
+      const answers = Array.from(fieldset.querySelectorAll('input:checked')).map((input) => input.closest('label')?.querySelector('span')?.textContent.trim() || input.value);
+      message.push(`${fieldset.dataset.question}\n• ${answers.join('\n• ')}`);
+    });
+    const whatsappUrl = `https://wa.me/${whatsappPhoneNumber}?text=${encodeURIComponent(message.join('\n\n'))}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    quoteStatus.textContent = 'Se abrió WhatsApp con tus respuestas. Revisa el mensaje y presiona Enviar para compartirlo.';
+  });
+</script>
+
 <style>
   .services-page { padding: 0 clamp(1rem,5vw,5rem) 5rem; background: radial-gradient(ellipse at 12% 0%,#e2f5ff 0,transparent 35%),#f5f8fc; }
   .services-hero { max-width: 920px; margin: auto; padding: clamp(4rem,9vw,7rem) 0 3.2rem; text-align: center; }
   .eyebrow { color: #0878c9; font-size: .72rem; font-weight: 800; letter-spacing: .19em; text-transform: uppercase; }
-  .services-hero h1 { margin: 1rem 0; color: #112c4b; font-size: clamp(2.25rem,5vw,4.2rem); line-height: 1.1; letter-spacing: -.055em; }.services-hero h1 span { color: #0788ca; }
-  .services-hero p { max-width: 680px; margin: auto; color: #61758b; font-size: 1.05rem; line-height: 1.8; }
+  .services-hero h1,.quote-heading h2 { margin: 1rem 0; color: #112c4b; font-size: clamp(2.25rem,5vw,4.2rem); line-height: 1.1; letter-spacing: -.055em; }
+  .services-hero h1 span,.quote-heading h2 span { color: #0788ca; }
+  .services-hero p,.quote-heading > p { max-width: 680px; margin: auto; color: #61758b; font-size: 1.05rem; line-height: 1.8; }
   .services-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.1rem; max-width: 1200px; margin: auto; }
-  .services-contact { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .6rem 1rem; margin: 2.5rem auto 0; color: #5e7188; text-align: center; }.services-contact p { margin: 0; }.services-contact a { color: #0878c9; font-weight: 800; text-decoration: none; }
+  .services-contact { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .6rem 1rem; margin: 2.5rem auto 0; color: #5e7188; text-align: center; }
+  .services-contact p { margin: 0; }
+  .services-contact a { padding: .85rem 1.2rem; border-radius: 999px; background: #294879; color: #fff; font-weight: 800; text-decoration: none; box-shadow: 0 10px 22px rgba(41,72,121,.18); transition: transform .2s ease,background .2s ease; }
+  .services-contact a:hover { transform: translateY(-2px); background: #416faa; }
+  .quote-section { max-width: 1040px; margin: clamp(4rem,9vw,7rem) auto 0; scroll-margin-top: 110px; }
+  .quote-heading { margin-bottom: 2rem; text-align: center; }
+  .quote-heading h2 { font-size: clamp(2rem,4.3vw,3.4rem); }
+  .quote-meta { display: flex; justify-content: center; flex-wrap: wrap; gap: .6rem; margin-top: 1.1rem; }
+  .quote-meta span { padding: .45rem .75rem; border: 1px solid #c9dcef; border-radius: 999px; background: #fff; color: #294879; font-size: .74rem; font-weight: 800; }
+  .quote-form { display: grid; gap: 1rem; }
+  .lead-fields { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; margin-bottom: .25rem; }
+  .lead-fields label { display: grid; gap: .45rem; color: #294879; font-size: .88rem; font-weight: 800; }
+  .lead-fields label span { color: #6b7f95; font-size: .75rem; font-weight: 600; }
+  .lead-fields input { min-width: 0; padding: .9rem 1rem; border: 1px solid #bdd0e3; border-radius: 14px; background: #fff; color: #172b45; font: 500 .95rem 'Montserrat',sans-serif; }
+  .lead-fields input:focus { outline: 3px solid rgba(8,136,202,.2); border-color: #0788ca; }
+  .question-card { min-width: 0; margin: 0; padding: 1.2rem; border: 1px solid #cfdeec; border-radius: 20px; background: #fff; box-shadow: 0 8px 22px rgba(25,63,104,.06); transition: border-color .2s ease,box-shadow .2s ease; }
+  .question-card legend { display: flex; align-items: flex-start; gap: .8rem; width: 100%; padding: 0; color: #183657; }
+  .question-card legend strong { display: block; padding-top: .12rem; font-size: .98rem; line-height: 1.45; }
+  .question-card legend small { display: block; margin-top: .28rem; color: #6a7e92; font-size: .76rem; font-weight: 600; }
+  .question-icon { display: grid; flex: 0 0 2.4rem; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 12px; background: #e4f5ff; font-size: 1.2rem; }
+  .answer-options { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .55rem; margin-top: 1rem; }
+  .answer-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .answer-option { position: relative; display: flex; align-items: flex-start; gap: .55rem; min-width: 0; min-height: 44px; padding: .7rem .75rem; border: 1px solid #d6e2ed; border-radius: 12px; background: #f7fafd; color: #304a65; cursor: pointer; font-size: .8rem; font-weight: 600; line-height: 1.45; transition: border-color .2s ease,background .2s ease,box-shadow .2s ease; }
+  .answer-option:hover { border-color: #63a8d7; background: #eff8ff; }
+  .answer-option input { flex: 0 0 auto; width: 1.05rem; height: 1.05rem; margin: .05rem 0 0; accent-color: #0878c9; }
+  .answer-option:has(input:checked) { border-color: #0878c9; background: #e4f5ff; color: #143b61; box-shadow: inset 0 0 0 1px #0878c9; }
+  .answer-option:focus-within { outline: 3px solid rgba(8,136,202,.22); }
+  .field-error { display: none; margin: .65rem 0 0; color: #a62525; font-size: .78rem; font-weight: 700; }
+  .question-card.has-error { border-color: #d22e3d; box-shadow: 0 0 0 3px rgba(210,46,61,.1); }
+  .question-card.has-error .field-error { display: block; }
+  .quote-privacy { margin: .2rem 0 0; color: #62768b; font-size: .79rem; line-height: 1.65; text-align: center; }
+  .quote-submit { display: flex; justify-content: center; align-items: center; gap: .6rem; width: 100%; padding: 1rem 1.25rem; border: 0; border-radius: 15px; background: #147c4d; color: #fff; font: 800 1rem 'Montserrat',sans-serif; cursor: pointer; box-shadow: 0 12px 24px rgba(20,124,77,.2); transition: transform .2s ease,background .2s ease; }
+  .quote-submit:hover { transform: translateY(-2px); background: #0d693f; }
+  .form-status { min-height: 1.4rem; margin: 0; color: #294879; font-size: .82rem; font-weight: 700; text-align: center; }
   @media (max-width: 780px) { .services-grid { grid-template-columns: 1fr; max-width: 650px; } }
+  @media (max-width: 620px) { .lead-fields { grid-template-columns: 1fr; } .answer-options,.answer-grid { grid-template-columns: 1fr; } .question-card { padding: 1rem; border-radius: 17px; } .answer-option { min-height: 48px; } }
+  @media (prefers-reduced-motion: reduce) { .services-contact a,.answer-option,.quote-submit { transition: none; } }
 </style>
