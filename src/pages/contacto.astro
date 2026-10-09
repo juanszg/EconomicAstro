@@ -47,6 +47,8 @@ import Layout from "../layouts/Layout.astro";
       <textarea id="mensaje" name="mensaje" rows="4" placeholder="Describe lo que necesitas cotizar..." required></textarea>
     </div>
 
+    <p class="privacy-short">Economic Sales de México, S.A. de C.V. usará tus datos para responder tu solicitud y dar seguimiento. <a href="/POLITICA%20DE%20PRIVACIDAD/politica.html">Consulta el aviso de privacidad integral</a>.</p>
+
     <button type="submit" class="cyber-btn">
       <span>ENVIAR SOLICITUD</span>
     </button>
@@ -370,6 +372,9 @@ import Layout from "../layouts/Layout.astro";
     flex-direction: column;
     gap: 8px;
   }
+
+  .privacy-short { margin: 0; color: #e2effc; font-size: .78rem; line-height: 1.6; }
+  .privacy-short a { color: #b9f1fb; font-weight: 700; text-underline-offset: .2em; }
 
   .input-group label {
     font-family: 'Montserrat', sans-serif;
